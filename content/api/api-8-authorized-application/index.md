@@ -14,7 +14,7 @@ This endpoint will return a list of user's authorized applications.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/authorized-applications`
+`https://biometricscloud.net/api/v1/authorized-applications`
 
 ##### Method
 
@@ -42,8 +42,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/authorized-applications" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/authorized-applications" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -75,7 +75,7 @@ This endpoint will retrieve the authorized application detail.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/authorized-application/1`
+`https://biometricscloud.net/api/v1/authorized-application/1`
 
 ##### Method
 
@@ -98,8 +98,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/application/1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/application/1" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -132,7 +132,7 @@ This endpoint will delete the authorized application.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/authorized-application/1`
+`https://biometricscloud.net/api/v1/authorized-application/1`
 
 ##### Method
 
@@ -155,8 +155,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X DELETE "https://ipregnancy.ws/api/v1/authorized-application/1" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA"
+curl -X DELETE "https://biometricscloud.net/api/v1/authorized-application/1" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
 ```
 
 ##### Success Response

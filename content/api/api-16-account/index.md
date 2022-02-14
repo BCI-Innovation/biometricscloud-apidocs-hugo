@@ -12,7 +12,7 @@ This endpoint will return the account details of the current authenticated user 
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/account`
+`https://biometricscloud.net/api/v1/account`
 
 ##### Method
 
@@ -100,7 +100,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/account" \
+curl "https://biometricscloud.net/api/v1/account" \
     -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
     -H "Content-Type: application/json"
 ```
@@ -127,7 +127,7 @@ This endpoint uploads the user profile picture.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/account/avatar`
+`https://biometricscloud.net/api/v1/account/avatar`
 
 ##### Method
 
@@ -220,9 +220,9 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
      -d '{"upload_content":"xyz","upload_filename":"lalal.png"}' \
-     https://ipregnancy.ws/api/v1/account/avatar
+     https://biometricscloud.net/api/v1/account/avatar
 ```
 
 **OR**
@@ -230,7 +230,7 @@ curl -X POST \
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
      -d '{"upload_content":"xyz","upload_filename":"lalal.png"}' \
      http://127.0.0.1:8000/api/v1/account/avatar
 ```
@@ -245,7 +245,7 @@ This endpoint will update the existing application.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/account`
+`https://biometricscloud.net/api/v1/account`
 
 ##### Method
 
@@ -344,7 +344,7 @@ clear; curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer 2lXO_fRkTZaK2bMesxdoMA" \
     -d '{"email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","country":"Canada","country_tel_code":"1","telephone":"(123) 456-7898","date_of_birth":"1990-01-01","marital_status":"married","children_count":1,"blood_group":"O+","height_in_meters":123,"weight_in_kg":90,"body_mass_index":null,"body_fat_percentage":10,"illnesses":null,"allergies":null,"allergy_pks":[1,2,3], "illness_pks":[1,2,3]}' \
-    https://ipregnancy.ws/api/v1/account;
+    https://biometricscloud.net/api/v1/account;
 ```
 
 **OR**
@@ -367,7 +367,7 @@ This endpoint will return the vitals of the user's account at the present.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/account/vitals`
+`https://biometricscloud.net/api/v1/account/vitals`
 
 ##### Method
 
@@ -458,7 +458,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/account/vitals" \
+curl "https://biometricscloud.net/api/v1/account/vitals" \
     -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
     -H "Content-Type: application/json"
 ```

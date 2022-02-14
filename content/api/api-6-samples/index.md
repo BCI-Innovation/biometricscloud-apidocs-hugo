@@ -14,7 +14,7 @@ This endpoint will create sample for an existing device and metric.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/samples`
+`https://biometricscloud.net/api/v1/samples`
 
 ##### Method
 
@@ -24,21 +24,18 @@ This endpoint will create sample for an existing device and metric.
 
 None
 
-##### Required
-
-None
 
 ##### Data Params
 
-Field | Example | Description
---------- | ----------- | -----------
-`metric_id` | 1 | The metric ID that this sample belongs to.
-`start_date` | 2022-01-12T06:33:26.696888Z | The date that this sample reading was taken on.  
-`end_date` | 2022-01-12T06:33:26.696888Z | The date that this sample reading finished.
-`quantity` | 60 | The value that was read by the sample.
-`sample_motion_context` | Sedentary | (Optional) Specify any context related information pertaining to this sample, for example: active, Active, NotSet, Sedentary
-`sample_sensor_location`  | 2 |  The location ID of where on the body was this sample reading taken from. Options: (1) Chest (2) Wrist (3) Finger (4) Hand (5) EarLobe (6) Foot (0) Other
-`sample_sensor_location_other` | Neural interface | (Optional) The sensor location in a location that specified by the hardware manufacturer.
+Field | Required | Example | Description
+--------- | ----------- | ----------- | -----------
+`metric_id` | Yes | 1 | The metric ID that this sample belongs to.
+`start_date` | Yes | 2022-01-12T06:33:26.696888Z | The date that this sample reading was taken on.  
+`end_date` | Yes | 2022-01-12T06:33:26.696888Z | The date that this sample reading finished.
+`quantity` | Yes | 60 | The value that was read by the sample.
+`sample_motion_context` | No | Sedentary | (Optional) Specify any context related information pertaining to this sample, for example: active, Active, NotSet, Sedentary. For more information see [Apple HealthKit docs](https://developer.apple.com/documentation/healthkit/hkheartratemotioncontext).
+`sample_sensor_location` | No | 2 |  The location ID of where on the body was this sample reading taken from. Options: (1) Chest (2) Wrist (3) Finger (4) Hand (5) EarLobe (6) Foot (0) Other. For more information see [Apple HealthKit docs](https://developer.apple.com/documentation/healthkit/hkmetadatakeyheartratesensorlocation).
+`sample_sensor_location_other` | No | Neural interface | (Optional) The sensor location in a location that specified by the hardware manufacturer.
 
 * *Note: Dates must be formatted using ["RFC3339"](https://golang.org/src/time/format.go) date/time standard or else API will return error.*
 
@@ -54,9 +51,9 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
-    https://ipregnancy.ws/api/v1/samples
+    https://biometricscloud.net/api/v1/samples
 ```
 
 **OR**
@@ -64,7 +61,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
     http://127.0.0.1:8000/api/v1/samples
 ```
@@ -80,7 +77,7 @@ This endpoint will return a list of time-series data.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/samples`
+`https://biometricscloud.net/api/v1/samples`
 
 ##### Method
 
@@ -88,22 +85,19 @@ This endpoint will return a list of time-series data.
 
 ##### URL Params
 
-Query Parameters | Description
---------- | -----------
-`offset` | The index of the record in the list which will be used as to filter any records less then this value.
-`limit`| The maximum number of entries to return in the pagination. Backend will not allow any value larger then 1000.
-`start_date_gt` | Filter time-series data which has a timestamp greater then inputed value.
-`start_date_gte` | Filter time-series data which has a timestamp greater and or equal to inputed value.
-`end_date_lt` | Filter time-series data which has a timestamp less then inputed value.
-`end_date_lte` | Filter time-series data which has a timestamp less than or equal to inputed value.
+Query Parameters | Required | Default | Description
+--------- | ----------- | ----------- | -----------
+`metric_id`  | Yes | - | The unique identification of the metric that belongs to the user that you want to return all the samples for.  
+`offset` | No | 0 | The index of the record in the list which will be used as to filter any records less then this value.
+`limit`| No | 100 | The maximum number of entries to return in the pagination. Backend will not allow any value larger then 1000.
+`start_date_gt` | No | - | Filter time-series data which has a timestamp greater then inputed value.
+`start_date_gte` | No | - | Filter time-series data which has a timestamp greater and or equal to inputed value.
+`end_date_lt` | No | - | Filter time-series data which has a timestamp less then inputed value.
+`end_date_lte` | No | - | Filter time-series data which has a timestamp less than or equal to inputed value.
 
 *Note (1): Query parameter inputted values must be **number of milliseconds since January 1, 1970 00:00:00** as found in the JavaScript [`getTime()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime) function.*
 
 *Note (2): Try running `console.log(new Date().getTime())` in your console to get an example of how the query parameter inputted value looks like.*
-
-##### Required
-
-None
 
 ##### Data Params
 
@@ -145,8 +139,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/samples?metric_id=1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/samples?metric_id=1" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -154,7 +148,7 @@ curl "https://ipregnancy.ws/api/v1/samples?metric_id=1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/samples?metric_id=1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 

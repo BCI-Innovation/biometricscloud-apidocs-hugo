@@ -12,7 +12,7 @@ This endpoint will return a list of allergies tracked by the system.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/allergies`
+`https://biometricscloud.net/api/v1/allergies`
 
 ##### Method
 
@@ -35,8 +35,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/allergies" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/allergies" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 

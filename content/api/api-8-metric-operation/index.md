@@ -14,7 +14,7 @@ This endpoint creates a metric simulator to run in the background and periodical
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metric-operations/simulators`
+`https://biometricscloud.net/api/v1/metric-operations/simulators`
 
 ##### Method
 
@@ -45,9 +45,9 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
      -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
-     https://ipregnancy.ws/api/v1/metric-operations/simulators
+     https://biometricscloud.net/api/v1/metric-operations/simulators
 ```
 
 ##### Success Response
@@ -73,7 +73,7 @@ This endpoint will return a list of active metric simulators.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metric-operations/simulators`
+`https://biometricscloud.net/api/v1/metric-operations/simulators`
 
 ##### Method
 
@@ -101,8 +101,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/metric-operations/simulators" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/metric-operations/simulators" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -135,7 +135,7 @@ This endpoint stops and deletes the simulator. Cannot resume later.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metric-operations/simulator/3`
+`https://biometricscloud.net/api/v1/metric-operations/simulator/3`
 
 ##### Method
 
@@ -160,8 +160,8 @@ Run the following in your terminal:
 ```shell
 curl -X DELETE \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
-    https://ipregnancy.ws/api/v1/metric-operations/simulator/3
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    https://biometricscloud.net/api/v1/metric-operations/simulator/3
 ```
 
 ##### Success Response
@@ -179,7 +179,7 @@ This endpoint will load in the background 2 years worth of random data. The data
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metric-operations/seed`
+`https://biometricscloud.net/api/v1/metric-operations/seed`
 
 ##### Method
 
@@ -209,9 +209,9 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
      -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
-     https://ipregnancy.ws/api/v1/metric-operations/seed
+     https://biometricscloud.net/api/v1/metric-operations/seed
 ```
 
 ##### Success Response

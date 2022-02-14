@@ -14,7 +14,7 @@ This endpoint will create a medical record with the file saved to the remote fil
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/files`
+`https://biometricscloud.net/api/v1/files`
 
 ##### Method
 
@@ -61,7 +61,7 @@ curl -X POST \
     -H "Authorization: Bearer 0AWwNRm9SCGi06JBhJHN4g" \
     -d '{"description":"This is a sample record","type":1,"upload_content":"xyz","upload_filename":"lalal.png"}
 ' \
-    https://ipregnancy.ws/api/v1/files
+    https://biometricscloud.net/api/v1/files
 ```
 
 **OR**
@@ -85,7 +85,7 @@ This endpoint will return a list of medical records.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/files`
+`https://biometricscloud.net/api/v1/files`
 
 ##### Method
 
@@ -137,8 +137,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/files" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/files" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -146,7 +146,7 @@ curl "https://ipregnancy.ws/api/v1/files" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/files" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -160,7 +160,7 @@ This endpoint will retrieve the medical record detail.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/file/1`
+`https://biometricscloud.net/api/v1/file/1`
 
 ##### Method
 
@@ -197,8 +197,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/file/1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/file/1" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -206,7 +206,7 @@ curl "https://ipregnancy.ws/api/v1/file/1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/file/1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -220,7 +220,7 @@ This endpoint will update the existing medical record.
 
 ##### URL
 
-``PUT https://ipregnancy.ws/api/v1/file/1``
+``PUT https://biometricscloud.net/api/v1/file/1``
 
 ##### Method
 
@@ -263,9 +263,9 @@ Run the following in your terminal:
 ```shell
 curl -X PUT \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"description":"This is a sample record","type":1,"upload_filename":"lalal.png"}' \
-    https://ipregnancy.ws/api/v1/file/1
+    https://biometricscloud.net/api/v1/file/1
 ```
 
 **OR**
@@ -273,7 +273,7 @@ curl -X PUT \
 ```shell
 curl -X PUT \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"description":"This is a sample record","type":1,"upload_filename":"lalal.png"}' \
     http://127.0.0.1:8000/api/v1/file/1
 ```
@@ -289,7 +289,7 @@ This endpoint will archive the medical record; as a result.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/file/1`
+`https://biometricscloud.net/api/v1/file/1`
 
 ##### Method
 
@@ -317,15 +317,15 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X DELETE "https://ipregnancy.ws/api/v1/file/1" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA"
+curl -X DELETE "https://biometricscloud.net/api/v1/file/1" \
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
 ```
 
 **OR**
 
 ```shell
 curl -X DELETE "http://127.0.0.1:8000/api/v1/file/1" \
-     -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA"
+     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
 ```
 
 ##### Notes

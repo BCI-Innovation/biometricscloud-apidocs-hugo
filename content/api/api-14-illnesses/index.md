@@ -12,7 +12,7 @@ This endpoint will return a list of illnesses tracked by the system.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/illnesses`
+`https://biometricscloud.net/api/v1/illnesses`
 
 ##### Method
 
@@ -59,8 +59,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/illnesses" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/illnesses" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -68,7 +68,7 @@ curl "https://ipregnancy.ws/api/v1/illnesses" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/illnesses" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 

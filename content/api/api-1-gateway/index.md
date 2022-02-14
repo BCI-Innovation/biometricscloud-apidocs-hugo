@@ -15,17 +15,13 @@ This endpoint will return the version of the platform.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/version`
+`https://biometricscloud.net/api/v1/version`
 
 ##### Method
 
 `GET`
 
 ##### URL Params
-
-None
-
-##### Required
 
 None
 
@@ -45,12 +41,12 @@ None
 
 Run the following in your terminal:
 ```shell
-curl "https://ipregnancy.ws/api/v1/version"
+curl "https://biometricscloud.net/api/v1/version"
 ```
 
 **OR**
 
-Run the following in your terminal:
+Run the following in your terminal for your **developer** instance:
 ```shell
 curl "http://localhost:8000/api/v1/version"
 ```
@@ -65,7 +61,7 @@ This endpoint return a greeting for the specified name.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/greeting`
+`https://biometricscloud.net/api/v1/greeting`
 
 ##### Method
 
@@ -75,15 +71,11 @@ This endpoint return a greeting for the specified name.
 
 None
 
-##### Required
-
-None
-
 ##### Data Params
 
-Parameter | Default | Description
+Parameter | Required | Description
 --------- | ------- | -----------
-`name` | "" | The name to test out with the API endpoint.
+`name` | Yes | The name to test out with the API endpoint.
 
 ##### Success Response
 
@@ -100,7 +92,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST -H "Content-Type: application/json" \
      -d '{"name": "Frank Herbert"}' \
-     https://ipregnancy.ws/api/v1/greeting
+     https://biometricscloud.net/api/v1/greeting
 ```
 
 **OR**
@@ -118,7 +110,7 @@ This endpoint registers a new user in our system.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/register`
+`https://biometricscloud.net/api/v1/register`
 
 ##### Method
 
@@ -128,25 +120,21 @@ This endpoint registers a new user in our system.
 
 None
 
-##### Required
-
-None
-
 ##### Data Params
 
-Field | Description
---------- | -----------
-`username` | The  unique name to identify your account.
-`first_name` | The first name of the user.
-`middle_name` | The middle name of the user.
-`last_name` | The last name of the user.  
-`country` | The country of origin for the user.
-`country_tel_code` | The country code for the telephone.
-`telephone` | The telephone number for the user.
-`email` | The email address for the user.  
-`agree_tos` | True or false value depending if the user agreed to the terms of service.
-`password` | The password to use for securing the user account.
-`password_repeat` | The password repeated to ensure user entered correct password.
+Field | Required | Description
+--------- | ----------- | -----------
+`username` | Yes | The  unique name to identify your account.
+`first_name` | Yes | The first name of the user.
+`middle_name` | No | The middle name of the user.
+`last_name` | Yes | The last name of the user.  
+`country` | Yes | The country of origin for the user.
+`country_tel_code` Yes | | The country code for the telephone.
+`telephone` | Yes | The telephone number for the user.
+`email` | Yes | The email address for the user.  
+`agree_tos` | Yes | True or false value depending if the user agreed to the terms of service.
+`password` | Yes | The password to use for securing the user account.
+`password_repeat` | Yes | The password repeated to ensure user entered correct password.
 
 ##### Success Response
 
@@ -180,7 +168,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST -H "Content-Type: application/json" \
      -d '{"username":"fherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898"}' \
-     https://ipregnancy.ws/api/v1/register
+     https://biometricscloud.net/api/v1/register
 ```
 
 **OR**
@@ -197,6 +185,8 @@ curl -X POST -H "Content-Type: application/json" \
 
 You are provided the access tokens so you can immediately start making calls to the protected API endpoints without logging in.
 
+Please note except username, all other fields get saved to the database using `AES` encryption. This platform utilizes data at rest encryption.
+
 
 # **Login**
 ##### Description
@@ -206,7 +196,7 @@ This endpoint will authenticate the user account for the provided `email` and `p
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/register`
+`https://biometricscloud.net/api/v1/register`
 
 ##### Method
 
@@ -222,10 +212,10 @@ None
 
 ##### Data Params
 
-Field | Description
---------- | -----------
-`username` | The unique name for the user account.  
-`password` | The password to use for securing the user account.
+Field | Required | Description
+--------- | ----------- | -----------
+`username` | Yes | The unique name for the user account.  
+`password` | Yes | The password to use for securing the user account.
 
 ##### Success Response
 
@@ -235,7 +225,6 @@ Field | Description
     {
       "username": "fherbert",
       "tenant_id": 2,
-      "tenant_schema_name": "",
       "first_name": "Frank",
       "middle_name": "",
       "last_name": "Herbert",
@@ -259,7 +248,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST -H "Content-Type: application/json" \
      -d '{"username":"fherbert","password":"pleasechangeme"}' \
-      https://ipregnancy.ws/api/v1/login
+      https://biometricscloud.net/api/v1/login
 ```
 
 **OR**
@@ -281,7 +270,7 @@ This endpoint will grant you new a `access_token` and `refresh_token` to use.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/refresh-token`
+`https://biometricscloud.net/api/v1/refresh-token`
 
 ##### Method
 
@@ -291,15 +280,11 @@ This endpoint will grant you new a `access_token` and `refresh_token` to use.
 
 None
 
-##### Required
-
-None
-
 ##### Data Params
 
-Field | Description
---------- | -----------
-`refresh_token` | The `refresh_token` which was provided from either the login or registration API endpoint.
+Field | Required | Description
+--------- | ----------- | -----------
+`refresh_token` | Yes | The `refresh_token` which was provided from either the login or registration API endpoint.
 
 ##### Success Response
 
@@ -307,7 +292,7 @@ Field | Description
   * **Content**:
     ```json
     {
-      "access_token": "_H33gILGSHecEEI0mcPkMA",
+      "access_token": "gKcy74O0RpuoNL1RsILloQ",
       "expires_in": 3600,
       "refresh_token": "G_oPoG_kTZirzdReu0VgQw",
       "scope": "all",
@@ -322,7 +307,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST -H "Content-Type: application/json" \
      -d '{"refresh_token":"r0RGyWZ0RueI6rs3oJigPw"}' \
-      https://ipregnancy.ws/api/v1/refresh-token
+      https://biometricscloud.net/api/v1/refresh-token
 ```
 
 **OR**

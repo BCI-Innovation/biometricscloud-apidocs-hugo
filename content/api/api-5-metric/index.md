@@ -13,7 +13,7 @@ This endpoint will create metric for an existing device.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metrics`
+`https://biometricscloud.net/api/v1/metrics`
 
 ##### Method
 
@@ -23,21 +23,17 @@ This endpoint will create metric for an existing device.
 
 None
 
-##### Required
-
-None
-
 ##### Data Params
 
-Field | Example | Description
---------- | ----------- | -----------
-`device_id` | 1 | The device ID that the metric belongs to.
-`name` | Heart Rate Monitor | The name of the metric.
-`sample_type` | heartRate | The type of measurement or reading being conducted.  Please use identifiers as found on Apple's HealthKit if you are using an Apple device.
-`sample_type_other` | hospitalHeartRateMachine | (Optiona) Custom type of measurement not specified by the device's manufacturer.
-`quantity_type` | bpm | The unit of measure.
-`quantity_type_other` | bph | The custom unit of measure not specified by the device's manufacturer.
-`is_continuous_data` | false | Specifies if the data is continuous or discrete.
+Field | Required | Example | Description
+--------- | ----------- | ----------- | -----------
+`device_id` | Yes | 1 | The device ID that the metric belongs to.
+`name` | Yes | Heart Rate Monitor | The name of the metric.
+`sample_type` | Yes | heartRate | The type of measurement or reading being conducted. Please use identifiers as found on [Apple's HealthKit](https://developer.apple.com/documentation/healthkit) if you are using an Apple device.
+`sample_type_other` | No | hospitalHeartRateMachine | (Optional) Custom type of measurement not specified by the device's manufacturer.
+`quantity_type`| No | bpm | The unit of measure for metric. A complete list can be found via [wikipedia](https://en.wikipedia.org/wiki/International_System_of_Units).
+`quantity_type_other` | Yes | bph | The custom unit of measure not specified by the device's manufacturer.
+`is_continuous_data` | Yes | false | Specifies if the data is continuous or discrete.
 
 ##### Success Response
 
@@ -78,9 +74,9 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"device_id":2,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
-    https://ipregnancy.ws/api/v1/applications
+    https://biometricscloud.net/api/v1/applications
 ```
 
 **OR**
@@ -88,7 +84,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -d '{"device_id":1,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
     http://127.0.0.1:8000/api/v1/metrics
 ```
@@ -103,7 +99,7 @@ This endpoint will return a list of metrics being tracked by the system.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metrics`
+`https://biometricscloud.net/api/v1/metrics`
 
 ##### Method
 
@@ -111,17 +107,12 @@ This endpoint will return a list of metrics being tracked by the system.
 
 ##### URL Params
 
-Query Parameters | Description
---------- | -----------
-`offset` | The `ID` of the record in the list which will be used as to filter any records less then this value.
-`limit` | The maximum number of entries to return in the pagination.
-`sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
-`sort_field` | The column to sort by.
-
-
-##### Required
-
-None
+Query Parameters | Required | Default | Description
+--------- | ----------- | ----------- | -----------
+`offset` | Yes | 0 | The `ID` of the record in the list which will be used as to filter any records less then this value.
+`limit` | Yes | 100 | The maximum number of entries to return in the pagination.
+`sort_order` | Yes | asc | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
+`sort_field` | Yes | id | The column to sort by.
 
 ##### Data Params
 
@@ -172,8 +163,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/metrics" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/metrics" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -181,7 +172,7 @@ curl "https://ipregnancy.ws/api/v1/metrics" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/metrics" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -196,7 +187,7 @@ This endpoint will retrieve the metric detail.
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/metric/1`
+`https://biometricscloud.net/api/v1/metric/1`
 
 ##### Method
 
@@ -204,11 +195,9 @@ This endpoint will retrieve the metric detail.
 
 ##### URL Params
 
-None
-
-##### Required
-
-None
+Query Parameters | Required | Default Value | Description
+--------- | ----------- | ----------- | -----------
+`device_id` | Yes  | - | The device identification that belongs to the user.
 
 ##### Data Params
 
@@ -251,8 +240,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/metric/1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/metric/1" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -261,7 +250,7 @@ curl "https://ipregnancy.ws/api/v1/metric/1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/metric/1" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 

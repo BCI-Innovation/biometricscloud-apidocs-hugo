@@ -29,7 +29,7 @@ This endpoint is used to obtain both access tokens and refresh tokens by resourc
 
 ##### URL
 
-`https://ipregnancy.ws/token`
+`https://biometricscloud.net/token`
 
 ##### Method
 
@@ -82,7 +82,7 @@ Query Parameter | Description
 Run the following in your terminal:
 
 ```shell
-curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=password&username=fherbert@dune.com&password=pleasechangeme&scope=all" https://ipregnancy.ws/token
+curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=password&username=fherbert@dune.com&password=pleasechangeme&scope=all" https://biometricscloud.net/token
 ```
 
 ##### Notes
@@ -98,7 +98,7 @@ This endpoint will provide access token for the client credentials grant type.
 
 ##### URL
 
-`https://ipregnancy.ws/token`
+`https://biometricscloud.net/token`
 
 ##### Method
 
@@ -147,7 +147,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=client_credentials" https://ipregnancy.ws/token
+curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=client_credentials" https://biometricscloud.net/token
 ```
 
 ##### Notes
@@ -158,7 +158,7 @@ curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=client_credenti
 ##### Description
 This endpoint will provide access and refresh tokens by the authorization code grant type. Please note that we are using a three-legged approach to authentication. The steps are outlines as follows in an example:
 
-**Leg 1:** Before utilizing this endpoint, your third-party application needs to redirect the user in the browser to the following URL: `https://ipregnancy.ws/authorize?client_id=1f60a74bab4c21bc&redirect_uri=https%3A%2F%2Fipregnancy.tech%2Fappauth%2Fcode&response_type=code&scope=all`.
+**Leg 1:** Before utilizing this endpoint, your third-party application needs to redirect the user in the browser to the following URL: `https://biometricscloud.net/authorize?client_id=1f60a74bab4c21bc&redirect_uri=https%3A%2F%2Fipregnancy.tech%2Fappauth%2Fcode&response_type=code&scope=all`.
 
 * `client_id=1f60a74bab4c21bc` - This is the client ID of your third party app which was provided to you during the create.
 * `redirect_uri=https%3A%2F%2Fipregnancy.tech%2Fappauth%2Fcode` - This is the redirect URL back to your third-party app's authorization code handler.
@@ -176,7 +176,7 @@ This endpoint will provide access and refresh tokens by the authorization code g
 
 ##### URL
 
-`https://ipregnancy.ws/token`
+`https://biometricscloud.net/token`
 
 ##### Method
 
@@ -221,7 +221,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&code=al-3_gq7SfKHE1nveCfdbw&client_id=1f60a74bab4c21bc&client_secret=lalalalalalala&state=xyz&redirect_uri=https://ipregnancy.tech/appauth/code" https://ipregnancy.ws/token
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&code=al-3_gq7SfKHE1nveCfdbw&client_id=1f60a74bab4c21bc&client_secret=lalalalalalala&state=xyz&redirect_uri=https://ipregnancy.tech/appauth/code" https://biometricscloud.net/token
 ```
 
 ##### Notes
@@ -237,7 +237,7 @@ This endpoint will, according to RFC 6749, will take the valid refresh token and
 
 ##### URL
 
-`https://ipregnancy.ws/token`
+`https://biometricscloud.net/token`
 
 ##### Method
 
@@ -287,7 +287,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=refresh_token&refresh_token=rGedIkXHQiqfLLr_2AiEXw" https://ipregnancy.ws/token
+curl -X POST -u "1f60a74bab4c21bc:lalalalalalala" -d "grant_type=refresh_token&refresh_token=rGedIkXHQiqfLLr_2AiEXw" https://biometricscloud.net/token
 
 ```
 

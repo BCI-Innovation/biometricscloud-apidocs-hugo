@@ -16,17 +16,13 @@ This endpoint will return the user's dashboard based on their running consumer w
 
 ##### URL
 
-`https://ipregnancy.ws/api/v1/dashboard`
+`https://biometricscloud.net/api/v1/dashboard`
 
 ##### Method
 
 `GET`
 
 ##### URL Params
-
-None
-
-##### Required
 
 None
 
@@ -247,8 +243,8 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://ipregnancy.ws/api/v1/dashboard" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+curl "https://biometricscloud.net/api/v1/dashboard" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```
 
@@ -256,6 +252,6 @@ curl "https://ipregnancy.ws/api/v1/dashboard" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/dashboard" \
-    -H "Authorization: Bearer _H33gILGSHecEEI0mcPkMA" \
+    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
     -H "Content-Type: application/json"
 ```

@@ -60,7 +60,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/illnesses" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -68,7 +68,7 @@ curl "https://biometricscloud.net/api/v1/illnesses" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/illnesses" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 

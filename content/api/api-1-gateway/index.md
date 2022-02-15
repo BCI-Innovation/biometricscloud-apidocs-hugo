@@ -292,7 +292,7 @@ Field | Required | Description
   * **Content**:
     ```json
     {
-      "access_token": "gKcy74O0RpuoNL1RsILloQ",
+      "access_token": "VSvXrNLlQCeCdTJjGUJgKw",
       "expires_in": 3600,
       "refresh_token": "G_oPoG_kTZirzdReu0VgQw",
       "scope": "all",

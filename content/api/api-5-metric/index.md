@@ -74,7 +74,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"device_id":2,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
     https://biometricscloud.net/api/v1/applications
 ```
@@ -84,7 +84,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"device_id":1,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
     http://127.0.0.1:8000/api/v1/metrics
 ```
@@ -164,7 +164,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/metrics" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -172,7 +172,7 @@ curl "https://biometricscloud.net/api/v1/metrics" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/metrics" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -241,7 +241,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/metric/1" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -250,7 +250,7 @@ curl "https://biometricscloud.net/api/v1/metric/1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/metric/1" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 

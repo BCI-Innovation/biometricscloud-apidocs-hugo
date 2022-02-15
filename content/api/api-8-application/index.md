@@ -46,7 +46,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer 0AWwNRm9SCGi06JBhJHN4g" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"name":"Third Party App","description":"An example of a third party app which lives on www.ipregnancy.tech","website_url":"https://ipregnancy.tech","scope":"all","redirect_url":"https://ipregnancy.tech/appauth/code","image_url":"https://ipregnancy.tech/static/logo.png"}' \
     https://biometricscloud.net/api/v1/applications
 ```
@@ -113,7 +113,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/applications" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -171,7 +171,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/application/1" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -240,7 +240,7 @@ Run the following in your terminal:
 ```shell
 curl -X PUT \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"name":"Third Party App","description":"Third Party App","website_url":"http://127.0.0.1:8000","scope":"all","redirect_url":"http://127.0.0.1:8001/appauth/code","image_url":"http://127.0.0.1:8001/static/logo.png"}' \
     https://biometricscloud.net/api/v1/application/1
 ```
@@ -300,7 +300,7 @@ Run the following in your terminal:
 
 ```shell
 curl -X DELETE "https://biometricscloud.net/api/v1/application/1" \
-     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
+     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
 ```
 
 ##### Success Response

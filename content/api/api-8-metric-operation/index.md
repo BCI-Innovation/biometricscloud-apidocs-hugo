@@ -45,7 +45,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
      -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
      https://biometricscloud.net/api/v1/metric-operations/simulators
 ```
@@ -102,7 +102,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/metric-operations/simulators" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -160,7 +160,7 @@ Run the following in your terminal:
 ```shell
 curl -X DELETE \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     https://biometricscloud.net/api/v1/metric-operations/simulator/3
 ```
 
@@ -209,7 +209,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
      -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
      https://biometricscloud.net/api/v1/metric-operations/seed
 ```

@@ -55,7 +55,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"manufacturer":"Apple","device_code":"iPhone1,1"}' \
     https://biometricscloud.net/api/v1/applications
 ```
@@ -65,7 +65,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"manufacturer":"Apple","device_code":"iPhone1,1"}' \
     http://127.0.0.1:8000/api/v1/devices
 ```
@@ -132,7 +132,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/devices" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -140,7 +140,7 @@ curl "https://biometricscloud.net/api/v1/devices" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/devices" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -196,7 +196,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/device/1" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -205,7 +205,7 @@ curl "https://biometricscloud.net/api/v1/device/1" \
 
 ```shell
 curl "http://localhost:8000/api/v1/device/1" \
-    -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
 
@@ -247,14 +247,14 @@ Run the following in your terminal:
 
 ```shell
 curl -X DELETE "https://biometricscloud.net/api/v1/device/1" \
-     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
+     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
 ```
 
 **OR**
 
 ```shell
 curl -X DELETE "http://127.0.0.1:8000/api/v1/device/1" \
-     -H "Authorization: Bearer gKcy74O0RpuoNL1RsILloQ"
+     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
 ```
 
 ##### Notes

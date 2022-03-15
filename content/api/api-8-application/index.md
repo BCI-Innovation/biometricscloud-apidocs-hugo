@@ -39,18 +39,6 @@ Field | Description
 `redirect_url` | The URL that the user will be redirected to once successful `authorization grant` was completed by the user.
 `image_url` | The URL of the thumbnail that will be displayed for third-party application.
 
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl -X POST \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
-    -d '{"name":"Third Party App","description":"An example of a third party app which lives on www.ipregnancy.tech","website_url":"https://ipregnancy.tech","scope":"all","redirect_url":"https://ipregnancy.tech/appauth/code","image_url":"https://ipregnancy.tech/static/logo.png"}' \
-    https://biometricscloud.net/api/v1/applications
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -73,6 +61,28 @@ curl -X POST \
         "modified_time": "2022-01-19T03:59:08.704325Z"
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -d '{"name":"Third Party App","description":"An example of a third party app which lives on www.ipregnancy.tech","website_url":"https://ipregnancy.tech","scope":"all","redirect_url":"https://ipregnancy.tech/appauth/code","image_url":"https://ipregnancy.tech/static/logo.png"}' \
+    https://biometricscloud.net/api/v1/applications
+```
+
+**OR**
+
+```shell
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -d '{"name":"Third Party App","description":"An example of a third party app which lives on www.ipregnancy.tech","website_url":"https://ipregnancy.tech","scope":"all","redirect_url":"https://ipregnancy.tech/appauth/code","image_url":"https://ipregnancy.tech/static/logo.png"}' \
+    http://127.0.0.1:8000/api/v1/applications
+```
 
 ##### Notes
 
@@ -107,16 +117,6 @@ None
 
 None
 
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl "https://biometricscloud.net/api/v1/applications" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
-    -H "Content-Type: application/json"
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -136,6 +136,24 @@ curl "https://biometricscloud.net/api/v1/applications" \
       ]
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl "https://biometricscloud.net/api/v1/applications" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+```shell
+curl "http://127.0.0.1:8000/api/v1/applications" \
+    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Content-Type: application/json"
+```
 
 ##### Notes
 

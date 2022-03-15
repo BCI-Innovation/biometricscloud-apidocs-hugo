@@ -40,8 +40,8 @@ Field | Requied | Description
 `province` | No | The province that this document belongs to.
 `city` | No | The city that this belongs to.
 `external_url` | No | Any external links this belongs to.
-`upload_content` | The `base64` content of the image.
-`upload_filename` | The file name of the image.
+`upload_content` | The `base64` content of the file upload.
+`upload_filename` | The file name of the upload.
 
 ##### Success Response
 
@@ -114,6 +114,7 @@ curl -X POST \
 
 * Please note the "file_url" will only be valid for 15 minutes and will expiry to become unavailable - you will need to call the retrieve endpoint to get a new "file_url".
 * To give a sample document, please checkout [this URL](https://www.forms.ssb.gov.on.ca/mbs/ssb/forms/ssbforms.nsf/FormDetail?OpenForm&ACT=RDR&TAB=PROFILE&ENV=WWE&NO=014-4297-82).
+* To generate base64 string from a file for testing, [try this link](https://base64.guru/converter/encode/file).
 
 # **List Document Requests**
 ##### Description
@@ -310,7 +311,7 @@ Field | Required | Description
 `external_url` | No | Any external links this belongs to.
 `upload_content` | The `base64` content of the image.
 `upload_filename` | The file name of the image.
-  |  
+ 
 ##### Success Response
 
   * **Status**: `200`

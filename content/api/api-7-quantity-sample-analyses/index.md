@@ -1,9 +1,9 @@
 ---
-title: 'Sample Analyses Endpoints'
+title: 'Quantity Sample Analyses Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 8
-summary: "The retrieve endpoints pertaining to sample analyses."
+summary: "The retrieve endpoints pertaining to quantity sample analyses."
 ---
 
 ## **List Calculations**
@@ -12,7 +12,7 @@ This endpoint will return a list of sample calculations.
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/sample-calculations`
+`https://biometricscloud.net/api/v1/quantity-sample-calculations`
 
 ##### Method
 
@@ -59,7 +59,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://biometricscloud.net/api/v1/sample-calculations?metric_id=1" \
+curl "https://biometricscloud.net/api/v1/quantity-sample-calculations?metric_id=1" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
@@ -67,7 +67,7 @@ curl "https://biometricscloud.net/api/v1/sample-calculations?metric_id=1" \
 **OR**
 
 ```shell
-curl "http://127.0.0.1:8000/api/v1/sample-calculations?metric_id=1" \
+curl "http://127.0.0.1:8000/api/v1/quantity-sample-calculations?metric_id=1" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```

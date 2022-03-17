@@ -1,20 +1,20 @@
 ---
-title: 'Samples Endpoints'
+title: 'Quantity Samples Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 7
-summary: "The create and retrieve endpoints pertaining to samples."
+summary: "The create and retrieve endpoints pertaining to quantity samples."
 ---
 
-Samples represent a single health datapoint sample from a consumer wearable device (ex: iWatch). A sample can be discrete or continuous datapoint.
+Quantity samples represent a single health datapoint sample from a consumer wearable device (ex: iWatch). A sample can be discrete or continuous datapoint.
 
-# **Create Sample**
+# **Create Quantity Sample**
 ##### Description
 This endpoint will create sample for an existing device and metric.
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/samples`
+`https://biometricscloud.net/api/v1/quantity-samples`
 
 ##### Method
 
@@ -53,7 +53,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
-    https://biometricscloud.net/api/v1/samples
+    https://biometricscloud.net/api/v1/quantity-samples
 ```
 
 **OR**
@@ -63,7 +63,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
-    http://127.0.0.1:8000/api/v1/samples
+    http://127.0.0.1:8000/api/v1/quantity-samples
 ```
 
 ##### Notes
@@ -77,7 +77,7 @@ This endpoint will return a list of time-series data.
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/samples`
+`https://biometricscloud.net/api/v1/quantity-samples`
 
 ##### Method
 
@@ -139,7 +139,7 @@ None
 Run the following in your terminal:
 
 ```shell
-curl "https://biometricscloud.net/api/v1/samples?metric_id=1" \
+curl "https://biometricscloud.net/api/v1/quantity-samples?metric_id=1" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```
@@ -147,7 +147,7 @@ curl "https://biometricscloud.net/api/v1/samples?metric_id=1" \
 **OR**
 
 ```shell
-curl "http://127.0.0.1:8000/api/v1/samples?metric_id=1" \
+curl "http://127.0.0.1:8000/api/v1/quantity-samples?metric_id=1" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
     -H "Content-Type: application/json"
 ```

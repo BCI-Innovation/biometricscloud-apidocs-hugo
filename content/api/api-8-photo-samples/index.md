@@ -48,13 +48,13 @@ Field | Required | Example | Description
 
 ##### Sample Call
 
-Run the following in your terminal:
+Run the following in your terminal.
 
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
-    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","photo":123,"sample_motion_context":"Active","sample_sensor_location":2, "upload_content":"xyz", "upload_filename":"lalal.png"}' \
+    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","photo":123,"sample_motion_context":"Active","sample_sensor_location":2, "upload_content":"<SEE NOTES BELOW>", "upload_filename":"lalal.png"}' \
     https://biometricscloud.net/api/v1/photo-samples
 ```
 
@@ -64,7 +64,7 @@ curl -X POST \
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
-    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","photo":123,"sample_motion_context":"Active","sample_sensor_location":2,  "upload_content":"xyz", "upload_filename":"lalal.png"}' \
+    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","photo":123,"sample_motion_context":"Active","sample_sensor_location":2, "upload_content":"<SEE NOTES BELOW>", "upload_filename":"lalal.png"}' \
     http://127.0.0.1:8000/api/v1/photo-samples
 ```
 
@@ -72,6 +72,12 @@ curl -X POST \
 
 * Article to help explain `RFC3339` format via link: [Understanding about RFC 3339 for Datetime and Timezone Formatting in Software Engineering
 ](https://medium.com/easyread/understanding-about-rfc-3339-for-datetime-formatting-in-software-engineering-940aa5d5f68a)
+* Please note, you will need to run a [base64 encode](https://base64.guru/converter/encode/file) on the file you want to upload, copy and paste the `Data URI - data:content/type;base64` value into your sample and then run the command.
+* You can use the following sample content for testing purposes only:
+
+```text
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAABGdBTUEAANbY1E9YMgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKjSURBVHjadJNfSFNRGMC/e8/uxnVbVtoqJW1sBlFW9F8jtyIisHqIQQ9LDAqjggIfYhpFL6GDekkqhhU1/2SYkKKRLhCcL1OSwgfptoYo2l227V51Dtmf0zmbja3yg++ee78/v/N93zmXwRhDptjtdrDZbJfPnTp6I6/QWBSU5GXfxJdlJYcUnFZX4Xa7vZnxisyPlpZW9Lq9zeFoqL1kNBrguOUa3G+wQ2mRFqSQBPNs/iYSlgVgaAU1NTUQXorA8OBAZ/MLp8XrFUD8OgLms1Wg4hDEf46DgsFw+1FX3VbDtsZYLEo2a0kRKIBlmWMFunUdd29WYVkKYc/oJ3zk0F58omwnftNUjydcz7BvyIkvWk4K6/M2sGazOZlHNdmCJocvK9FvMe0wFsHIh1YApITKit0QjKpBo9VCPJGAcGQZzldWlAgz89c3FxQ0ZbXAMAxH3kuvXjjTf+uKJX9hcQkYFsG0Xwbd2hxQqThgSIBKyYGjcxAcbT2N81KojgLYFVCU6Njb90MdQTlMsKTveAKKN+YmkwJSOAmjkqdRwoIs9f2pgM2c6FxQvvPE2TPJq5QpKoGQ+YB3SgRhRoJoLAa6/FzqCvwXQER61eWy+aZFQCjlisbisG97MZh2FSbDV+Dq1QAQi8dd7tHxJVp6elAsSx9pIA1bFUBEFueCCyz7r0uhQPDDH6AEf9ZNNBgMKRpJ+u6bBERW5q9kamMBQzCCkVqz5jQxNacBHo8nGaQlZ26rq1d7Bnt5uhtHFCGycgqgR/u4te/Xx1Hh5cED+2ezKigvL09XIIpiQpKk2qft/Q9Nh/fkzs5Mw7gwFXg3MNyLEX+vurp60mq1Zv9MgiBkVrtI9LnLM2Ed++aP8Dz/oLu7+zOxhfR6Pb10Wa39FmAAqAgNiwPnYuoAAAAASUVORK5CYII=
+```
 
 # **List Data**
 ##### Description

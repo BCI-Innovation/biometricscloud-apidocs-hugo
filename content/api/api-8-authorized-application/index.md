@@ -43,7 +43,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/authorized-applications" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -99,7 +99,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/application/1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -156,7 +156,7 @@ Run the following in your terminal:
 
 ```shell
 curl -X DELETE "https://biometricscloud.net/api/v1/authorized-application/1" \
-     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
 ```
 
 ##### Success Response

@@ -58,7 +58,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"description":"This is a sample record","type":1,"upload_content":"xyz","upload_filename":"lalal.png"}
 ' \
     https://biometricscloud.net/api/v1/files
@@ -69,7 +69,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"description":"This is a sample record","type":1,"upload_content":"xyz","upload_filename":"lalal.png"}
 ' \
     http://127.0.0.1:8000/api/v1/files
@@ -138,7 +138,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/files" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -146,7 +146,7 @@ curl "https://biometricscloud.net/api/v1/files" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/files" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -198,7 +198,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/file/1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -206,7 +206,7 @@ curl "https://biometricscloud.net/api/v1/file/1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/file/1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -263,7 +263,7 @@ Run the following in your terminal:
 ```shell
 curl -X PUT \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"description":"This is a sample record","type":1,"upload_filename":"lalal.png"}' \
     https://biometricscloud.net/api/v1/file/1
 ```
@@ -273,7 +273,7 @@ curl -X PUT \
 ```shell
 curl -X PUT \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"description":"This is a sample record","type":1,"upload_filename":"lalal.png"}' \
     http://127.0.0.1:8000/api/v1/file/1
 ```
@@ -318,14 +318,14 @@ Run the following in your terminal:
 
 ```shell
 curl -X DELETE "https://biometricscloud.net/api/v1/file/1" \
-     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
 ```
 
 **OR**
 
 ```shell
 curl -X DELETE "http://127.0.0.1:8000/api/v1/file/1" \
-     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw"
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
 ```
 
 ##### Notes

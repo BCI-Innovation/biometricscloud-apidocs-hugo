@@ -187,6 +187,13 @@ You are provided the access tokens so you can immediately start making calls to 
 
 Please note except username, all other fields get saved to the database using `AES` encryption. This platform utilizes data at rest encryption.
 
+For the remainder of this tutorial, please use enviornment variables for the `access_token` and `refresh_token` by running the following:
+
+```bash
+export BIOMETRICSCLOUD_ACCESS_TOKEN=ugvzcBY-QxO4BkRFrF9FuQ
+export BIOMETRICSCLOUD_REFRESH_TOKEN=2vR8dicaSdOpFJqfSZuQRw
+```
+
 
 # **Login**
 ##### Description
@@ -292,7 +299,7 @@ Field | Required | Description
   * **Content**:
     ```json
     {
-      "access_token": "VSvXrNLlQCeCdTJjGUJgKw",
+      "access_token": "$BIOMETRICSCLOUD_ACCESS_TOKEN",
       "expires_in": 3600,
       "refresh_token": "G_oPoG_kTZirzdReu0VgQw",
       "scope": "all",

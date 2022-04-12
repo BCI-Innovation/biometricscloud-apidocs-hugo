@@ -244,7 +244,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/dashboard" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -252,6 +252,6 @@ curl "https://biometricscloud.net/api/v1/dashboard" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/dashboard" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```

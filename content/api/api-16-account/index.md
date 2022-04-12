@@ -220,7 +220,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
      -d '{"upload_content":"xyz","upload_filename":"lalal.png"}' \
      https://biometricscloud.net/api/v1/account/avatar
 ```
@@ -230,7 +230,7 @@ curl -X POST \
 ```shell
 curl -X POST \
      -H "Content-Type: application/json" \
-     -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
      -d '{"upload_content":"xyz","upload_filename":"lalal.png"}' \
      http://127.0.0.1:8000/api/v1/account/avatar
 ```

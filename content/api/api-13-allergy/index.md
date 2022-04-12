@@ -36,7 +36,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/allergies" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 

@@ -61,7 +61,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/quantity-sample-calculations?metric_id=1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -69,7 +69,7 @@ curl "https://biometricscloud.net/api/v1/quantity-sample-calculations?metric_id=
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/quantity-sample-calculations?metric_id=1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 

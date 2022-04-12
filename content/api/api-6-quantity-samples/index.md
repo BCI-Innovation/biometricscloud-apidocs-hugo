@@ -51,7 +51,7 @@ Run the following in your terminal:
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
     https://biometricscloud.net/api/v1/quantity-samples
 ```
@@ -61,7 +61,7 @@ curl -X POST \
 ```shell
 curl -X POST \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
     http://127.0.0.1:8000/api/v1/quantity-samples
 ```
@@ -140,7 +140,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/quantity-samples?metric_id=1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -148,7 +148,7 @@ curl "https://biometricscloud.net/api/v1/quantity-samples?metric_id=1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/quantity-samples?metric_id=1" \
-    -H "Authorization: Bearer VSvXrNLlQCeCdTJjGUJgKw" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 

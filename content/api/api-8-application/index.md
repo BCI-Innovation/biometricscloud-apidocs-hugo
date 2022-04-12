@@ -108,6 +108,7 @@ Query Parameters | Description
 `limit` | The maximum number of entries to return in the pagination.
 `sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
 `sort_field` | The column to sort by.
+`user_id` | Apply filter to only return the applications based on the specified `user_id` value.
 
 ##### Required
 

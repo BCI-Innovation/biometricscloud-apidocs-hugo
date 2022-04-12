@@ -269,6 +269,13 @@ curl -X POST -H "Content-Type: application/json" \
 ##### Notes
 If the access token is about to expiry then please call the refresh API endpoint token to get the latest access token, else the user will have to log in again.
 
+For the remainder of this tutorial, please use enviornment variables for the `access_token` and `refresh_token` by running the following:
+
+```bash
+export BIOMETRICSCLOUD_ACCESS_TOKEN=vm08NdRnRh6LnYLSUbjjdA
+export BIOMETRICSCLOUD_REFRESH_TOKEN=r0RGyWZ0RueI6rs3oJigPw
+```
+
 # **Refresh Token (Frontend Only)**
 ##### Description
 This endpoint will grant you new a `access_token` and `refresh_token` to use.

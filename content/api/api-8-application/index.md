@@ -185,16 +185,6 @@ None
 
 None
 
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl "https://biometricscloud.net/api/v1/application/1" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -H "Content-Type: application/json"
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -216,6 +206,24 @@ curl "https://biometricscloud.net/api/v1/application/1" \
       "modified_time": "2022-01-18T18:55:56.176972-05:00"
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl "https://biometricscloud.net/api/v1/application/1" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+```shell
+curl "http://127.0.0.1:8000/api/v1/application/1" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
 
 ##### Notes
 
@@ -252,19 +260,6 @@ Field | Description
 `redirect_url` | The URL that the user will be redirected to once successful `authorization grant` was completed by the user.
 `image_url` | The URL of the thumbnail that will be displayed for third-party application.
 
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl -X PUT \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"name":"Third Party App","description":"Third Party App","website_url":"http://127.0.0.1:8000","scope":"all","redirect_url":"http://127.0.0.1:8001/appauth/code","image_url":"http://127.0.0.1:8001/static/logo.png"}' \
-    https://biometricscloud.net/api/v1/application/1
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -285,6 +280,28 @@ curl -X PUT \
       "modified_time": "2022-01-18T18:55:56.176972-05:00"
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X PUT \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"name":"Third Party App","description":"Third Party App","website_url":"http://127.0.0.1:8000","scope":"all","redirect_url":"http://127.0.0.1:8001/appauth/code","image_url":"http://127.0.0.1:8001/static/logo.png"}' \
+    https://biometricscloud.net/api/v1/application/1
+```
+
+**OR**
+
+```shell
+curl -X PUT \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"name":"Third Party App","description":"Third Party App","website_url":"http://127.0.0.1:8000","scope":"all","redirect_url":"http://127.0.0.1:8001/appauth/code","image_url":"http://127.0.0.1:8001/static/logo.png"}' \
+    http://127.0.0.1:8000/api/v1/application/1
+```
 
 ##### Notes
 

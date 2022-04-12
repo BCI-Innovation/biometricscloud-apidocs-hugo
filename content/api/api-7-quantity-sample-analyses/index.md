@@ -30,6 +30,7 @@ Query Parameters | Description
 `start_gte` | Filter calculations which has a start timestamp greater and or equal to inputed value.
 `finish_lt` | Filter calculations which has a finish timestamp less then inputed value.
 `finish_lte` | Filter calculations which has a finish timestamp less than or equal to inputed value.
+`metric_id` | Filter based on the metric.
 
 ##### Required
 

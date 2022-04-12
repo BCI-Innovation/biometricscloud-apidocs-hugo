@@ -25,7 +25,7 @@ Query Parameters | Description
 `offset` | The index of the record in the list which will be used as to filter any records less then this value.
 `limit` | The maximum number of entries to return in the pagination. Backend will not allow any value larger then 1000.
 `function` | Only accepted value is `1` for *Average*.
-`frequency` | Only accepted values are: (1) *Day*, (2) *Week*, (3) *Frequency*, (4) *Year*.
+`frequency` | Only accepted values are: `1` for *Day*, `2` for *Week*, `3` for *Frequency*, and `4` for *Year*.
 `start_gt` | Filter calculations which has a start timestamp greater then inputed value.
 `start_gte` | Filter calculations which has a start timestamp greater and or equal to inputed value.
 `finish_lt` | Filter calculations which has a finish timestamp less then inputed value.
@@ -49,9 +49,7 @@ None
     {
         "next_timestamp": "2022-01-22T17:20:00-05:00",
         "count": 3,
-        "results": [
-
-        ]
+        "results": ["..."]
     }
     ```
 

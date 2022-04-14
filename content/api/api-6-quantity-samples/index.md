@@ -36,6 +36,7 @@ Field | Required | Example | Description
 `sample_motion_context` | No | Sedentary | (Optional) Specify any context related information pertaining to this sample, for example: active, Active, NotSet, Sedentary. For more information see [Apple HealthKit docs](https://developer.apple.com/documentation/healthkit/hkheartratemotioncontext).
 `sample_sensor_location` | No | 2 |  The location ID of where on the body was this sample reading taken from. Options: (1) Chest (2) Wrist (3) Finger (4) Hand (5) EarLobe (6) Foot (0) Other. For more information see [Apple HealthKit docs](https://developer.apple.com/documentation/healthkit/hkmetadatakeyheartratesensorlocation).
 `sample_sensor_location_other` | No | Neural interface | (Optional) The sensor location in a location that specified by the hardware manufacturer.
+`is_null` | No | Indicates if we want to submit a sample with null quantity.
 
 * *Note: Dates must be formatted using ["RFC3339"](https://golang.org/src/time/format.go) date/time standard or else API will return error.*
 
@@ -52,7 +53,7 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
+    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2,"is_null":false}' \
     https://biometricscloud.net/api/v1/quantity-samples
 ```
 
@@ -62,7 +63,7 @@ curl -X POST \
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2}' \
+    -d '{"metric_id":1,"start_date":"2022-01-12T06:33:26.696888Z", "end_date":"2022-01-12T06:33:26.696888Z","quantity":123,"sample_motion_context":"Active","sample_sensor_location":2,"is_null":false}' \
     http://127.0.0.1:8000/api/v1/quantity-samples
 ```
 

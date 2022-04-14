@@ -57,7 +57,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -d '{"manufacturer":"Apple","device_code":"iPhone1,1"}' \
-    https://biometricscloud.net/api/v1/applications
+    https://biometricscloud.net/api/v1/devices
 ```
 
 **OR**

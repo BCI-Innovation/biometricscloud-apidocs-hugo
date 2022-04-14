@@ -37,19 +37,6 @@ Field | Description
 `min_value` | xxx
 `null_probability_percent` |  xxx
 
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl -X POST \
-     -H "Content-Type: application/json" \
-     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-     -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
-     https://biometricscloud.net/api/v1/metric-operations/simulators
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -62,6 +49,28 @@ curl -X POST \
         "null_probability_percent": 10
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     https://biometricscloud.net/api/v1/metric-operations/simulators
+```
+
+**OR**
+
+```shell
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     http://127.0.0.1:8000/api/v1/metric-operations/simulators
+```
 
 ##### Notes
 
@@ -96,16 +105,6 @@ None
 
 None
 
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl "https://biometricscloud.net/api/v1/metric-operations/simulators" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -H "Content-Type: application/json"
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -124,6 +123,26 @@ curl "https://biometricscloud.net/api/v1/metric-operations/simulators" \
         ]
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl "https://biometricscloud.net/api/v1/metric-operations/simulators" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+
+```shell
+curl "http://127.0.0.1:8000/api/v1/metric-operations/simulators" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
 
 ##### Notes
 
@@ -157,6 +176,11 @@ None
 
 Run the following in your terminal:
 
+##### Success Response
+
+  * **Status**: `204`
+  * **Content**: None
+
 ```shell
 curl -X DELETE \
     -H "Content-Type: application/json" \
@@ -164,10 +188,14 @@ curl -X DELETE \
     https://biometricscloud.net/api/v1/metric-operations/simulator/3
 ```
 
-##### Success Response
+**OR**
 
-  * **Status**: `204`
-  * **Content**: None
+```shell
+curl -X DELETE \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    http://127.0.0.1:8000/api/v1/metric-operations/simulator/3
+```
 
 ##### Notes
 
@@ -202,6 +230,11 @@ Field | Description
 `min_value` | xxx
 `null_probability_percent` |  xxx
 
+##### Success Response
+
+  * **Status**: `201`
+  * **Content**: None
+
 ##### Sample Call
 
 Run the following in your terminal:
@@ -210,14 +243,19 @@ Run the following in your terminal:
 curl -X POST \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-     -d '{"metric_id":3,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
      https://biometricscloud.net/api/v1/metric-operations/seed
 ```
 
-##### Success Response
+**OR**
 
-  * **Status**: `201`
-  * **Content**: None
+```shell
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     http://127.0.0.1:8000/api/v1/metric-operations/seed
+```
 
 ##### Notes
 

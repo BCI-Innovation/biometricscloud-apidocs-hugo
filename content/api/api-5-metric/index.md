@@ -75,7 +75,7 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"device_id":2,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
+    -d '{"device_id":1,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
     https://biometricscloud.net/api/v1/metrics
 ```
 

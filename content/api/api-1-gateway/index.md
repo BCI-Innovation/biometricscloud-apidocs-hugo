@@ -203,7 +203,7 @@ This endpoint will authenticate the user account for the provided `email` and `p
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/register`
+`https://biometricscloud.net/api/v1/login`
 
 ##### Method
 

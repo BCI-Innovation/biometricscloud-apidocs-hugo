@@ -101,7 +101,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/account" \
-    -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -109,7 +109,7 @@ curl "https://biometricscloud.net/api/v1/account" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/account" \
-    -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -459,7 +459,7 @@ Run the following in your terminal:
 
 ```shell
 curl "https://biometricscloud.net/api/v1/account/vitals" \
-    -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
@@ -467,7 +467,7 @@ curl "https://biometricscloud.net/api/v1/account/vitals" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/account/vitals" \
-    -H "Authorization: Bearer _YFuLvb5S0Ok4xUOv-nojA" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 

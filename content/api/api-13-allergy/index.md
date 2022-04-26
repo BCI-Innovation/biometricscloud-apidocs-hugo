@@ -30,16 +30,6 @@ None
 
 None
 
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl "https://biometricscloud.net/api/v1/allergies" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -H "Content-Type: application/json"
-```
-
 ##### Success Response
 
   * **Status**: `200`
@@ -63,6 +53,24 @@ curl "https://biometricscloud.net/api/v1/allergies" \
         ]
     }
     ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl "https://biometricscloud.net/api/v1/allergies" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+```shell
+curl "http://127.0.0.1:8000/api/v1/allergies" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
 
 ##### Notes
 

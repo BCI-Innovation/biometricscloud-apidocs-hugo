@@ -79,6 +79,8 @@ curl -X POST \
 
 * Please note the "file_url" will only be valid for 15 minutes and will expiry to become unavailable - you will need to call the retrieve endpoint to get a new "file_url".
 
+* To generate base64 string from a file for testing, [try this link](https://base64.guru/converter/encode/file).
+
 # **List Files**
 ##### Description
 This endpoint will return a list of medical records.

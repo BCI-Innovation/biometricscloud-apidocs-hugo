@@ -135,6 +135,10 @@ Field | Required | Description
 `agree_tos` | Yes | True or false value depending if the user agreed to the terms of service.
 `password` | Yes | The password to use for securing the user account.
 `password_repeat` | Yes | The password repeated to ensure user entered correct password.
+`account_type` | Yes | The type of user account to setup. Options: `1`=**Personal** and `2`=**Professional**.
+`account_sub_type` | Yes | If you selected `account_type=1` then you need to fill this out. Select from `1`=**Other**, `2`=**Practitioner** and `3`=**Clinician**.
+`account_sub_type_other` | Yes | If you selected `account_type=1` and `account_sub_type=1` then you need to fill this out. Please write your profession, ex: "Gym Instructor, Martial Arts Instructor, etc".
+`organization_name` | Yes | If you selected `account_type=1` then you need to fill this out. Please write the name of the organization you represent.
 
 ##### Success Response
 
@@ -166,18 +170,18 @@ Field | Required | Description
 Run the following in your terminal:
 
 ```shell
-curl -X POST -H "Content-Type: application/json" \
-     -d '{"username":"fherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898"}' \
-     https://biometricscloud.net/api/v1/register
+# See below, replace `http://localhost:8000` with `https://biometricscloud.net`.
 ```
 
 **OR**
 
 
 ```shell
-curl -X POST -H "Content-Type: application/json" \
-     -d '{"username":"fherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898"}' \
-     http://localhost:8000/api/v1/register
+# PERSONAL ACCOUNT
+curl -X POST -H "Content-Type: application/json" -d '{"username":"fherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898","account_type":1}' http://localhost:8000/api/v1/register
+
+# PROFESSIONAL ACCOUNT
+curl -X POST -H "Content-Type: application/json" -d '{"username":"bherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"bherbert@dune.com","first_name":"Brian","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7899","account_type":2,"account_sub_type":1,"account_sub_type_other":"Gym Instructor","organization_name":"Elite Physical Training"}' http://localhost:8000/api/v1/register
 ```
 
 

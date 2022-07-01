@@ -125,7 +125,7 @@ This endpoint will Update note for an existing user.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/diagnosis/1`
+`https://bionotescloud.net/api/v1/time-log/1`
 
 ##### Method
 
@@ -158,7 +158,7 @@ Run the following in your terminal:
 curl -X GET \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    https://bionotescloud.net/api/v1/diagnosis/1
+    https://bionotescloud.net/api/v1/time-log/1
 ```
 
 **OR**
@@ -210,11 +210,7 @@ Field | Required | Example | Description
 Run the following in your terminal:
 
 ```shell
-curl -X PUT \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"title":"Test Time Log #1","content":"This is a yet another test.", "state":1}' \
-    https://bionotescloud.net/api/v1/diagnosis/1
+
 ```
 
 **OR**
@@ -223,8 +219,8 @@ curl -X PUT \
 curl -X PUT \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"title":"Test Time Log #1","content":"This is a yet another test.", "state":1}' \
-    http://127.0.0.1:8000/api/v1/diagnosis/1
+    -d '{"user_id":2, "type":"initial meeting","duration_in_minutes":15, "session_time":"1990-01-01T00:00:00Z","start_time":"1990-01-01T00:00:00Z","end_time":"1990-01-01T00:00:00Z","is_myself":false,"praticitionar_name":"Bob Page","notes":"These are some notes..."}' \
+    http://127.0.0.1:8000/api/v1/time-log/1
 ```
 
 ##### Time Logs
@@ -232,20 +228,13 @@ curl -X PUT \
 None
 
 
-
-
-
-
-
-
-
-# **Delete Time Log**
+<!-- # **Delete Time Log**
 ##### Description
-This endpoint will sever the link between the logged in user (ex: Clinician) and the client.
+xxxx
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/client/1`
+`https://bionotescloud.net/api/v1/time-log/1`
 
 ##### Method
 
@@ -273,17 +262,17 @@ None
 Run the following in your terminal:
 
 ```shell
-curl -X DELETE "https://bionotescloud.net/api/v1/client/1" \
+curl -X DELETE "https://bionotescloud.net/api/v1/time-log/1" \
      -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
 ```
 
 **OR**
 
 ```shell
-curl -X DELETE "http://127.0.0.1:8000/api/v1/client/1" \
+curl -X DELETE "http://127.0.0.1:8000/api/v1/time-log/1" \
      -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
 ```
 
 ##### Time Logs
 
-None
+None -->

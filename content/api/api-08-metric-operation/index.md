@@ -243,7 +243,7 @@ Run the following in your terminal:
 curl -X POST \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     -d '{"metric_id":"1","max_value":"120","min_value":"60","null_probability_percent":"10"}' \
      https://biometricscloud.net/api/v1/metric-operations/seed
 ```
 
@@ -253,7 +253,7 @@ curl -X POST \
 curl -X POST \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-     -d '{"metric_id":1,"max_value":120,"min_value":60,"null_probability_percent":10}' \
+     -d '{"metric_id":"3","max_value":"120","min_value":"60","null_probability_percent":"10"}' \
      http://127.0.0.1:8000/api/v1/metric-operations/seed
 ```
 

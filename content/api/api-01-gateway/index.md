@@ -178,10 +178,10 @@ Run the following in your terminal:
 
 ```shell
 # PERSONAL ACCOUNT
-curl -X POST -H "Content-Type: application/json" -d '{"username":"fherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898","account_type":1}' http://localhost:8000/api/v1/register
+curl -X POST -H "Content-Type: application/json" -d '{"username":"fherbert","agree_tos":"true","country":"Canada","country_tel_code":"1","email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7898","account_type":"1"}' http://localhost:8000/api/v1/register
 
 # PROFESSIONAL ACCOUNT
-curl -X POST -H "Content-Type: application/json" -d '{"username":"bherbert","agree_tos":true,"country":"Canada","country_tel_code":"1","email":"bherbert@dune.com","first_name":"Brian","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7899","account_type":2,"account_sub_type":1,"account_sub_type_other":"Gym Instructor","organization_name":"Elite Physical Training"}' http://localhost:8000/api/v1/register
+curl -X POST -H "Content-Type: application/json" -d '{"username":"bherbert","agree_tos":"true","country":"Canada","country_tel_code":"1","email":"bherbert@dune.com","first_name":"Brian","last_name":"Herbert","password":"pleasechangeme","password_repeat":"pleasechangeme","telephone":"(123) 456-7899","account_type":"2","account_sub_type":"1","account_sub_type_other":"Gym Instructor","organization_name":"Elite Physical Training"}' http://localhost:8000/api/v1/register
 ```
 
 

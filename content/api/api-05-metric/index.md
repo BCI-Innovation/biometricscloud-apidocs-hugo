@@ -82,10 +82,25 @@ curl -X POST \
 **OR**
 
 ```shell
+# Example of heart rate monitoring.
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"device_id":1,"name":"Heart Rate Monitor", "sample_type":"heartRate","quantity_type":"bpm","is_continuous_data":false}' \
+    -d '{"device_id":"1","name":"Heart Rate Monitor", "sample_type":"count/min","quantity_type":"HKQuantityTypeIdentifierHeartRate","is_continuous_data":"false"}' \
+    http://127.0.0.1:8000/api/v1/metrics
+
+# Example of step count.
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"device_id":"1","name":"Step Count", "sample_type":"count","quantity_type":"HKQuantityTypeIdentifierStepCount","is_continuous_data":"false"}' \
+    http://127.0.0.1:8000/api/v1/metrics
+
+# Example of activity.
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"device_id":"1","name":"Step Count", "sample_type":"count","quantity_type":"HKQuantityTypeIdentifierStepCount","is_continuous_data":"false"}' \
     http://127.0.0.1:8000/api/v1/metrics
 ```
 

@@ -27,7 +27,7 @@ Query Parameters | Description
 `limit` | The maximum number of entries to return in the pagination.
 `sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
 `sort_field` | The column to sort by.
-`search` | The keywords to search through.
+`tag_search` | The keywords to search the tags through. Ex: `mainMuscle`.
 
 ##### Required
 
@@ -66,8 +66,6 @@ curl "http://127.0.0.1:8000/api/v1/exercises" \
 ##### Exercises
 
 None
-
-
 
 # **Retrieve Exercise**
 ##### Description
@@ -118,6 +116,66 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     http://127.0.0.1:8000/api/v1/exercise/1
+```
+
+##### Exercises
+
+None
+
+# **List Exercise Tags**
+##### Description
+This endpoint will return a list of exercise tags.
+
+##### URL
+
+`https://bioexercisescloud.net/api/v1/exercise-tags`
+
+##### Method
+
+`GET`
+
+##### URL Params
+
+Query Parameters | Description
+--------- | -----------
+`offset` | The `ID` of the record in the list which will be used as to filter any records less then this value.
+`limit` | The maximum number of entries to return in the pagination.
+`sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
+`sort_field` | The column to sort by.
+`type` | The `type` filter to the results by. Example: `mainMuscle` or `equipment`.
+
+##### Required
+
+None
+
+##### Data Params
+
+None
+
+##### Success Response
+
+  * **Status**: `200`
+  * **Content**:
+    ```json
+    {}
+    ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl "https://bioexercisescloud.net/api/v1/exercise-tags" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+```shell
+curl "http://127.0.0.1:8000/api/v1/exercise-tags" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
 ```
 
 ##### Exercises

@@ -1,11 +1,11 @@
 ---
-title: 'Appointment Type Endpoints'
+title: 'Appointment Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 5
 summary: "CRUD endpoints pertaining Tags."
 ---
-The following endpoints provide CRUD operations on our appointment type.
+The following endpoints provide CRUD operations on our appointment.
 
 
 # **Create Appointment Type**
@@ -14,7 +14,7 @@ xxx
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/appointment-types`
+`https://biometricscloud.net/api/v1/appointments`
 
 ##### Method
 
@@ -28,17 +28,13 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`user_id` | Yes | 1 | -
-`duration_in_minutes` | Yes | 30 | -
-`name` | Yes | 30 min PT Session (in-person) | The name of the appointment type.
-`self_cancel_max_hour` | Yes | 24 | -
-`self_cancel_min_hour` | Yes | 3600 | -
-`is_group_appointment` | Yes | false | -
-`attendees_count` | Yes | 1 | -
-`is_virtual` | Yes | false | Indicates whether meeting is in-person (`false`) or online (`true`)
-`is_paid_session` | Yes | true | -
-`has_self_cancel_hours` | Yes | true | Controls whether attendants can cancel this appointment. If not then it's up to the owner of the appointment to cancel.
-`is_private` | Yes | true | `true` = Do not show appointments to other users. `false` = Other users can see the appointments that have this type.
+`appointment_type_id` | Yes | 1 | -
+`attendents_count` | Yes | - | -
+`attendents_ids` | Yes | - | -
+`location_name` | Yes | - | -
+`notes` | Yes | - | -
+`organizer_id` | Yes | - | -
+`type_id` | Yes | - | -
 
 ##### Success Response
 

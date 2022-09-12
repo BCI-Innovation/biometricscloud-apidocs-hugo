@@ -136,9 +136,9 @@ Field | Required | Description
 `password` | Yes | The password to use for securing the user account.
 `password_repeat` | Yes | The password repeated to ensure user entered correct password.
 `account_type` | Yes | The type of user account to setup. Options: `1`=**Personal** and `2`=**Professional**.
-`account_sub_type` | Yes | If you selected `account_type=1` then you need to fill this out. Select from `1`=**Other**, `2`=**Practitioner** and `3`=**Clinician**.
-`account_sub_type_other` | Yes | If you selected `account_type=1` and `account_sub_type=1` then you need to fill this out. Please write your profession, ex: "Gym Instructor, Martial Arts Instructor, etc".
-`organization_name` | Yes | If you selected `account_type=1` then you need to fill this out. Please write the name of the organization you represent.
+`account_sub_type` | Yes | If you selected `account_type=2` then you need to fill this out. Select from `1`=**Other**, `2`=**Practitioner** and `3`=**Clinician**.
+`account_sub_type_other` | Yes | If you selected `account_type=2` and `account_sub_type=1` then you need to fill this out. Please write your profession, ex: "Gym Instructor, Martial Arts Instructor, etc".
+`organization_name` | Yes | If you selected `account_type=2` then you need to fill this out. Please write the name of the organization you represent.
 
 ##### Success Response
 

@@ -263,12 +263,24 @@ None
 
 Field | Description
 --------- | -----------
-`name` | The name of the third-party application to display to users.
-`description` | The description of the third-party application to display to users.
-`website_url` | The URL of the brochure website the user will be redirected to from their dashboard.
-`scope`  | Only accepted value is `all`.
-`redirect_url` | The URL that the user will be redirected to once successful `authorization grant` was completed by the user.
-`image_url` | The URL of the thumbnail that will be displayed for third-party application.
+`email` | The email of the user. Must be unique.
+`first_name` | The user's first name.
+`middle_name` | The user's middle name (if they have one).
+`last_name` | The user's last name.
+`country` | The user's current country location.
+`country_tel_code` | The user's current country telephone code. Ex: Canada = `+1`, USA = `+1`.
+`telephone` | The user's primary telephone number.
+`date_of_birth` | The user's date of birth.
+`gender` | The user's gender identification.
+`marital_status` | The user's marital status.
+`children_count` | How many biologically related children the user has.
+`blood_group` | The user's blood group.
+`height_in_meters` | The user's height measured in meters.
+`weight_in_kg` | The user's weight measured in kilogram units.
+`body_mass_index` | The user's BMI.
+`body_fat_percentage` | The user's bofy fat percentage.
+`allergy_pks` | The list of primary key values for the allergies that the user has. See more about [allergy](https://github.com/BCI-Innovation/biometricscloud-apidocs-hugo/blob/master/content/api/api-13-allergy/index.md). Example: `1,2,3`.
+`illness_pks` | The list of primary key values for the illnesses that the user has. See more about [illnesses](https://github.com/BCI-Innovation/biometricscloud-apidocs-hugo/blob/master/content/api/api-14-illnesses/index.md). Example: `1,2,3`.
 
 ##### Success Response
 

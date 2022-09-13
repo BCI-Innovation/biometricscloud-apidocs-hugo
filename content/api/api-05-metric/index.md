@@ -206,13 +206,13 @@ This endpoint will retrieve the metric detail.
 
 ##### Method
 
-`POST`
+`GET`
 
 ##### URL Params
 
 Query Parameters | Required | Default Value | Description
 --------- | ----------- | ----------- | -----------
-`device_id` | Yes  | - | The device identification that belongs to the user.
+`metric_id` | Yes  | - | The metric identification that belongs to the user.
 
 ##### Data Params
 
@@ -265,6 +265,57 @@ curl "https://biometricscloud.net/api/v1/metric/1" \
 
 ```shell
 curl "http://127.0.0.1:8000/api/v1/metric/1" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+##### Notes
+
+None
+
+
+# **(Permanently) Delete Metric**
+##### Description
+This endpoint will permanently delete the metric and all associated data.
+
+##### URL
+
+`https://biometricscloud.net/api/v1/metric/1`
+
+##### Method
+
+`DELETE`
+
+##### URL Params
+
+Query Parameters | Required | Default Value | Description
+--------- | ----------- | ----------- | -----------
+`metric_id` | Yes  | - | The metric identification that belongs to the user.
+
+##### Data Params
+
+None
+
+##### Success Response
+
+  * **Status**: `204`
+  * **Content**: Empty
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X DELETE "https://biometricscloud.net/api/v1/metric/1" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -H "Content-Type: application/json"
+```
+
+**OR**
+
+
+```shell
+curl -X DELETE "http://127.0.0.1:8000/api/v1/metric/1" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```

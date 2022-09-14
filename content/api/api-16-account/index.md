@@ -486,3 +486,62 @@ curl "http://127.0.0.1:8000/api/v1/account/vitals" \
 ##### Notes
 
 None
+
+# **Change Password Operation**
+##### Description
+This endpoint changes the user password.
+
+##### URL
+
+`https://biometricscloud.net/api/v1/account/change-password`
+
+##### Method
+
+`POST`
+
+##### URL Params
+
+None
+
+##### Required
+
+None
+
+##### Data Params
+
+Field | Description
+--------- | -----------
+`old_password` | The previous password.
+`new_password` | The new password.
+`new_password_repeat` | The new password to repeat.
+
+##### Success Response
+
+  * **Status**: `204`
+  * **Content**: Empty
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+     -d '{"old_password":"123password","new_password":"123password","new_password_repeat":"123password"}' \
+     https://biometricscloud.net/api/v1/change-password
+```
+
+**OR**
+
+```shell
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+     -d '{"old_password":"123password","new_password":"123password","new_password_repeat":"123password"}' \
+     http://127.0.0.1:8000/api/v1/change-password
+```
+
+##### Notes
+
+None

@@ -279,8 +279,6 @@ Field | Description
 `weight_in_kg` | The user's weight measured in kilogram units.
 `body_mass_index` | The user's BMI.
 `body_fat_percentage` | The user's bofy fat percentage.
-`allergy_pks` | The list of primary key values for the allergies that the user has. See more about [allergy](https://github.com/BCI-Innovation/biometricscloud-apidocs-hugo/blob/master/content/api/api-13-allergy/index.md). Example: `1,2,3`.
-`illness_pks` | The list of primary key values for the illnesses that the user has. See more about [illnesses](https://github.com/BCI-Innovation/biometricscloud-apidocs-hugo/blob/master/content/api/api-14-illnesses/index.md). Example: `1,2,3`.
 
 ##### Success Response
 
@@ -355,7 +353,7 @@ Run the following in your terminal:
 clear; curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","country":"Canada","country_tel_code":"1","telephone":"(123) 456-7898","date_of_birth":"1990-01-01","marital_status":"married","children_count":1,"blood_group":"O+","height_in_meters":123,"weight_in_kg":90,"body_mass_index":null,"body_fat_percentage":10,"illnesses":null,"allergies":null,"allergy_pks":[1,2,3], "illness_pks":[1,2,3]}' \
+    -d '{"email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","country":"Canada","country_tel_code":"1","telephone":"(123) 456-7898","date_of_birth":"1990-01-01","marital_status":"married","children_count":1,"blood_group":"O+","height_in_meters":123,"weight_in_kg":90,"body_mass_index":null,"body_fat_percentage":10,"illnesses":null,"allergies":null}' \
     https://biometricscloud.net/api/v1/account;
 ```
 
@@ -365,7 +363,7 @@ clear; curl -X POST \
 clear; curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","country":"Canada","country_tel_code":"1","telephone":"(123) 456-7898","date_of_birth":"1990-01-01","marital_status":"married","children_count":1,"blood_group":"O+","height_in_meters":123,"weight_in_kg":90,"body_mass_index":null,"body_fat_percentage":10,"illnesses":null,"allergies":null,"allergy_pks":[1,2,3], "illness_pks":[1,2,3]}' \
+    -d '{"email":"fherbert@dune.com","first_name":"Frank","last_name":"Herbert","country":"Canada","country_tel_code":"1","telephone":"(123) 456-7898","date_of_birth":"1990-01-01","marital_status":"married","children_count":1,"blood_group":"O+","height_in_meters":123,"weight_in_kg":90,"body_mass_index":null,"body_fat_percentage":10,"illnesses":null,"allergies":null}' \
     http://127.0.0.1:8000/api/v1/account;
 ```
 

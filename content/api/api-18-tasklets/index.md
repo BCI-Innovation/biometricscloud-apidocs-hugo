@@ -67,7 +67,7 @@ This endpoint responds to a `tasklet #1`. If the user accepts then data is share
 
 ##### URL
 
-`https://biometricscloud.net/api/v1/tasklets/1`
+`https://biometricscloud.net/api/v1/tasklets/1/close`
 
 ##### Method
 

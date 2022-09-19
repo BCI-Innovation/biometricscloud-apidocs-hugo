@@ -3,7 +3,7 @@ title: 'Message Threads Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 14
-summary: "The retrieve endpoints for the diagnosis data."
+summary: "The retrieve endpoints for the message threads and their replies."
 ---
 
 
@@ -15,7 +15,7 @@ This endpoint will xyz.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message-threads`
+`https://bionotescloud.net/api/v1/messages`
 
 ##### Method
 
@@ -29,7 +29,9 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-
+`to_user_id` | Yes | 2 | The user to send this message to.
+`title` | Yes | Hey | The title to display in the message.
+`content` | Yes | How are you doing? | The content of the message.
 
 ##### Success Response
 
@@ -70,7 +72,7 @@ This endpoint will return a list of notes that have granted permission to the cu
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message-threads`
+`https://bionotescloud.net/api/v1/messages`
 
 ##### Method
 
@@ -80,6 +82,7 @@ This endpoint will return a list of notes that have granted permission to the cu
 
 Query Parameters | Description
 --------- | -----------
+`type_id` | Available choices: `sent` or `received`. `sent` will display all the messages that you sent to other users. `received` will display all the message that where sent to you.
 `offset` | The `ID` of the record in the list which will be used as to filter any records less then this value.
 `limit` | The maximum number of entries to return in the pagination.
 `sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
@@ -88,7 +91,7 @@ Query Parameters | Description
 
 ##### Required
 
-None
+* `type_id`
 
 ##### Data Params
 
@@ -99,6 +102,28 @@ None
   * **Status**: `200`
   * **Content**:
     ```json
+    {
+        "next_offset": 1,
+        "count": 1,
+        "results": [
+            {
+                "id": 1,
+                "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
+                "tenant_id": 1,
+                "from_user_id": 1,
+                "to_user_id": 2,
+                "title": "Hey",
+                "content": "How are you doing?",
+                "state": 1,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-19T16:27:29.617639Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-19T16:27:29.617639Z"
+            }
+        ]
+    }
     ```
 
 ##### Sample Call
@@ -112,7 +137,7 @@ Run the following in your terminal:
 **OR**
 
 ```shell
-curl "http://127.0.0.1:8000/api/v1/messages" \
+curl "http://127.0.0.1:8000/api/v1/messages?type_id=sent" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
@@ -130,7 +155,7 @@ This endpoint will Update note for an existing user.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message-thread/1`
+`https://bionotescloud.net/api/v1/message/1`
 
 ##### Method
 
@@ -152,6 +177,20 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
+        "tenant_id": 1,
+        "from_user_id": 1,
+        "to_user_id": 2,
+        "title": "Hey",
+        "content": "How are you doing?",
+        "state": 1,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "0001-01-01T00:00:00Z",
+        "modified_by_user_id": 1,
+        "modified_by_name_name": "Frank Herbert",
+        "modified_time": "2022-09-19T16:27:29.617639Z"
     }
     ```
 
@@ -163,7 +202,7 @@ Run the following in your terminal:
 curl -X GET \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    https://bionotescloud.net/api/v1/message-thread/1
+    https://bionotescloud.net/api/v1/message/1
 ```
 
 **OR**
@@ -172,171 +211,9 @@ curl -X GET \
 curl -X GET \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    http://127.0.0.1:8000/api/v1/diagnosis/1
-```
-
-##### Message Threads
-
-None
-
-
-<!-- ####################################################################### -->
-
-# **Update Message Thread**
-##### Description
-This endpoint will xyz.
-
-##### URL
-
-`https://bionotescloud.net/api/v1/message/1`
-
-##### Method
-
-`PUT`
-
-##### URL Params
-
-None
-
-##### Data Params
-
-Field | Required | Example | Description
---------- | ----------- | ----------- | -----------
-
-
-##### Success Response
-
-  * **Status**: `200`
-  * **Content**:
-    ```json
-    {
-    }
-    ```
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-#...
-```
-
-**OR**
-
-```shell
-curl -X PUT \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"to_user_id":2, "title":"Heyyy","content":"How are you?"}' \
     http://127.0.0.1:8000/api/v1/message/1
 ```
 
 ##### Message Threads
 
 None
-
-
-<!-- ####################################################################### -->
-
-# **Update Message Thread**
-##### Description
-This endpoint will Update note for an existing user.
-
-##### URL
-
-`https://bionotescloud.net/api/v1/diagnosis/1`
-
-##### Method
-
-`POST`
-
-##### URL Params
-
-None
-
-##### Data Params
-
-Field | Required | Example | Description
---------- | ----------- | ----------- | -----------
-
-
-##### Success Response
-
-  * **Status**: `200`
-  * **Content**:
-    ```json
-    {
-    }
-    ```
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-
-```
-
-**OR**
-
-```shell
-curl -X PUT \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"user_id":2, "type":"initial meeting","duration_in_minutes":15, "session_time":"1990-01-01T00:00:00Z","start_time":"1990-01-01T00:00:00Z","end_time":"1990-01-01T00:00:00Z","is_myself":false,"praticitionar_name":"Bob Page","notes":"These are some notes..."}' \
-    http://127.0.0.1:8000/api/v1/message-thread/1
-```
-
-##### Message Threads
-
-None
-
-
-<!-- # **Delete Message Thread**
-##### Description
-xxxx
-
-##### URL
-
-`https://bionotescloud.net/api/v1/message-thread/1`
-
-##### Method
-
-`DELETE`
-
-##### URL Params
-
-None
-
-##### Required
-
-None
-
-##### Data Params
-
-None
-
-##### Success Response
-
-  * **Status**: `204`
-  * **Content**: None
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-curl -X DELETE "https://bionotescloud.net/api/v1/message-thread/1" \
-     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
-```
-
-**OR**
-
-```shell
-curl -X DELETE "http://127.0.0.1:8000/api/v1/message-thread/1" \
-     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN"
-```
-
-##### Message Threads
-
-None -->

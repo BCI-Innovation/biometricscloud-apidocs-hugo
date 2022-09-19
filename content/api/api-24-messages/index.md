@@ -217,3 +217,220 @@ curl -X GET \
 ##### Message Threads
 
 None
+
+<!-- ####################################################################### -->
+
+# **Create Message Reply**
+##### Description
+This endpoint will xyz.
+
+##### URL
+
+`https://bionotescloud.net/api/v1/message/1/replies`
+
+##### Method
+
+`POST`
+
+##### URL Params
+
+None
+
+##### Data Params
+
+Field | Required | Example | Description
+--------- | ----------- | ----------- | -----------
+`to_user_id` | Yes | 2 | The user to send this message to.
+`title` | Yes | Hey | The title to display in the message.
+`content` | Yes | How are you doing? | The content of the message.
+
+##### Success Response
+
+  * **Status**: `200`
+  * **Content**:
+    ```json
+    {
+        "id": 1,
+        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
+        "tenant_id": 1,
+        "from_user_id": 1,
+        "to_user_id": 2,
+        "title": "Hey",
+        "content": "How are you doing?",
+        "state": 2,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "0001-01-01T00:00:00Z",
+        "modified_by_user_id": 2,
+        "modified_by_name_name": "Brian Herbert",
+        "modified_time": "2022-09-19T16:54:41.389789Z",
+        "message_replies": [
+            {
+                "id": 2,
+                "uuid": "609516a8-6c76-435e-bedf-6612bbd647de",
+                "tenant_id": 1,
+                "message_thread_id": 1,
+                "from_user_id": 1,
+                "to_user_id": 2,
+                "title": "Hey",
+                "content": "I am doing good, thank you. How are you?",
+                "state": 1,
+                "created_by_user_id": 2,
+                "created_by_name_name": "Brian Herbert",
+                "created_time": "2022-09-19T18:57:54.126863Z",
+                "modified_by_user_id": 2,
+                "modified_by_name_name": "Brian Herbert",
+                "modified_time": "2022-09-19T18:57:54.126863Z"
+            },
+            {
+                "id": 1,
+                "uuid": "e4344470-0cde-4dd2-9250-f46c14f7b86c",
+                "tenant_id": 1,
+                "message_thread_id": 1,
+                "from_user_id": 1,
+                "to_user_id": 2,
+                "title": "Hey",
+                "content": "How are you doing?",
+                "state": 1,
+                "created_by_user_id": 2,
+                "created_by_name_name": "Brian Herbert",
+                "created_time": "2022-09-19T16:48:40.910413Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-19T16:50:55.032108Z"
+            }
+        ]
+    }
+    ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+#...
+```
+
+**OR**
+
+```shell
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"to_user_id":2, "title":"Hey","content":"I am doing good, thank you. How are you?"}' \
+    http://127.0.0.1:8000/api/v1/message/1/replies
+```
+
+##### Notes
+
+None
+
+<!-- ####################################################################### -->
+
+
+# **Update Message Reply**
+##### Description
+This endpoint will xyz.
+
+##### URL
+
+`https://bionotescloud.net/api/v1/message/1/replies`
+
+##### Method
+
+`PUT`
+
+##### URL Params
+
+None
+
+##### Data Params
+
+Field | Required | Example | Description
+--------- | ----------- | ----------- | -----------
+`to_user_id` | Yes | 2 | The user to send this message to.
+`title` | Yes | Hey | The title to display in the message.
+`content` | Yes | How are you doing? | The content of the message.
+
+##### Success Response
+
+  * **Status**: `200`
+  * **Content**:
+    ```json
+    {
+        "id": 1,
+        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
+        "tenant_id": 1,
+        "from_user_id": 1,
+        "to_user_id": 2,
+        "title": "Hey",
+        "content": "How are you doing?",
+        "state": 2,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "0001-01-01T00:00:00Z",
+        "modified_by_user_id": 2,
+        "modified_by_name_name": "Brian Herbert",
+        "modified_time": "2022-09-19T16:54:41.389789Z",
+        "message_replies": [
+            {
+                "id": 2,
+                "uuid": "609516a8-6c76-435e-bedf-6612bbd647de",
+                "tenant_id": 1,
+                "message_thread_id": 1,
+                "from_user_id": 1,
+                "to_user_id": 2,
+                "title": "Hey",
+                "content": "I am doing good, thank you. How are you?",
+                "state": 1,
+                "created_by_user_id": 2,
+                "created_by_name_name": "Brian Herbert",
+                "created_time": "2022-09-19T18:57:54.126863Z",
+                "modified_by_user_id": 2,
+                "modified_by_name_name": "Brian Herbert",
+                "modified_time": "2022-09-19T18:57:54.126863Z"
+            },
+            {
+                "id": 1,
+                "uuid": "e4344470-0cde-4dd2-9250-f46c14f7b86c",
+                "tenant_id": 1,
+                "message_thread_id": 1,
+                "from_user_id": 1,
+                "to_user_id": 2,
+                "title": "Hey",
+                "content": "How are you doing?",
+                "state": 1,
+                "created_by_user_id": 2,
+                "created_by_name_name": "Brian Herbert",
+                "created_time": "2022-09-19T16:48:40.910413Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-19T16:50:55.032108Z"
+            }
+        ]
+    }
+    ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+#...
+```
+
+**OR**
+
+```shell
+curl -X PUT \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"to_user_id":2, "title":"Hey","content":"I am doing good, thank you. How are you?"}' \
+    http://127.0.0.1:8000/api/v1/message/1/replies
+```
+
+##### Notes
+
+None
+
+<!-- ####################################################################### -->

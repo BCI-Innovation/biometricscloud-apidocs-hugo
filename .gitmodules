@@ -1,0 +1,6 @@
+[submodule "src/biometricscloud-apidocs/public"]
+	path = src/biometricscloud-apidocs/public
+	url = git@github.com:BCI-Innovation/biometricscloud-apidocs-html.git
+[submodule "src/biometricscloud-apidocs/themes/hugo-whisper-theme"]
+	path = src/biometricscloud-apidocs/themes/hugo-whisper-theme
+	url = git@github.com:zerostaticthemes/hugo-whisper-theme.git

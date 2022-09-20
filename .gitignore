@@ -103,9 +103,7 @@ bin/*
 # Hugo
 .hugo_build.lock
 
-# Do not save the public folder.
-public
-
 resources
 private.txt
 private.md
+private0.md

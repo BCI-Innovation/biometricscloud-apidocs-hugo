@@ -240,8 +240,6 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`to_user_id` | Yes | 2 | The user to send this message to.
-`title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.
 
 ##### Success Response
@@ -317,7 +315,7 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"to_user_id":2, "title":"Hey","content":"I am doing good, thank you. How are you?"}' \
+    -d '{"content":"I am doing good, thank you. How are you?"}' \
     http://127.0.0.1:8000/api/v1/message/1/replies
 ```
 
@@ -348,8 +346,6 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`to_user_id` | Yes | 2 | The user to send this message to.
-`title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.
 
 ##### Success Response
@@ -425,8 +421,62 @@ Run the following in your terminal:
 curl -X PUT \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"to_user_id":2, "title":"Hey","content":"I am doing good, thank you. How are you?"}' \
+    -d '{"content":"I am doing good, thank you. How are you?"}' \
     http://127.0.0.1:8000/api/v1/message/1/replies
+```
+
+##### Notes
+
+None
+
+<!-- ####################################################################### -->
+
+
+<!-- ####################################################################### -->
+
+
+# **Delete Message Thread**
+##### Description
+This endpoint will delete the whole message thread.
+
+##### URL
+
+`https://bionotescloud.net/api/v1/message/1`
+
+##### Method
+
+`DELETE`
+
+##### URL Params
+
+None
+
+##### Data Params
+
+Field | Required | Example | Description
+--------- | ----------- | ----------- | -----------
+None
+
+##### Success Response
+
+  * **Status**: `204`
+  * **Content**: None
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+#...
+```
+
+**OR**
+
+```shell
+curl -X DELETE \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    http://127.0.0.1:8000/api/v1/message/1
 ```
 
 ##### Notes

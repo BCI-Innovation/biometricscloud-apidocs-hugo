@@ -1,7 +1,7 @@
 ---
 title: 'Gateway Endpoints'
 date: 2019-02-11T19:27:37+10:00
-weight: 2
+weight: 1
 summary: "The API gateway deals with registration and login of users along with other misc functions."
 ---
 

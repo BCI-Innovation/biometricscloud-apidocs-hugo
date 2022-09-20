@@ -2,7 +2,7 @@
 title: 'Document Request Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 17
+weight: 16
 summary: "The CRUD endpoints pertaining to document requests."
 ---
 
@@ -311,7 +311,7 @@ Field | Required | Description
 `external_url` | No | Any external links this belongs to.
 `upload_content` | The `base64` content of the image.
 `upload_filename` | The file name of the image.
- 
+
 ##### Success Response
 
   * **Status**: `200`

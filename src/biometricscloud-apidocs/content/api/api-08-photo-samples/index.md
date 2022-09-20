@@ -2,7 +2,7 @@
 title: 'Photo Samples Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 7
+weight: 8
 summary: "The create and retrieve endpoints pertaining to photo samples."
 ---
 

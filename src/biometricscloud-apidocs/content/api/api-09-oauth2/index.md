@@ -2,7 +2,7 @@
 title: 'oAuth 2.0 Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 12
+weight: 9
 summary: "Endpoints pertaining to oAuth 2.0 handling."
 ---
 

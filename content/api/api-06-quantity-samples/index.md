@@ -2,7 +2,7 @@
 title: 'Quantity Samples Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 7
+weight: 6
 summary: "The create and retrieve endpoints pertaining to quantity samples."
 ---
 
@@ -173,7 +173,7 @@ This endpoint will return a grouped list of time-series data.
 
 Query Parameters | Required | Default | Description
 --------- | ----------- | ----------- | -----------
-`metric_ids`  | Yes | - | The list of unique identification of the metrics that belongs to the user that you want to return all the samples for. Example: `metric_ids=1,2,3`. 
+`metric_ids`  | Yes | - | The list of unique identification of the metrics that belongs to the user that you want to return all the samples for. Example: `metric_ids=1,2,3`.
 `offset` | No | 0 | The index of the record in the list which will be used as to filter any records less then this value.
 `limit`| No | 100 | The maximum number of entries to return in the pagination. Backend will not allow any value larger then 1000.
 `start_date_gt` | No | - | Filter time-series data which has a timestamp greater then inputed value.

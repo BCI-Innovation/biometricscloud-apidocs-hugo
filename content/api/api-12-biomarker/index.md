@@ -2,7 +2,7 @@
 title: 'Biomarker Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 14
+weight: 12
 summary: "The retrieve endpoints for the biomarker data."
 ---
 

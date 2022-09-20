@@ -2,7 +2,7 @@
 title: 'Metric Operation Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 11
+weight: 8
 summary: "Perform various operations on the data within a metric."
 ---
 Perform various operations on the data within a metric.

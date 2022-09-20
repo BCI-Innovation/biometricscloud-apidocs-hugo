@@ -2,7 +2,7 @@
 title: 'Quantity Sample Analyses Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 8
+weight: 7
 summary: "The retrieve endpoints pertaining to quantity sample analyses."
 ---
 

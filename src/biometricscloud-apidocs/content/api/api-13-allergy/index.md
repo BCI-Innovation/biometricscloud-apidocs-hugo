@@ -2,7 +2,7 @@
 title: 'Allergy Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 14
+weight: 13
 summary: "The retrieve endpoints for the allergy data."
 ---
 

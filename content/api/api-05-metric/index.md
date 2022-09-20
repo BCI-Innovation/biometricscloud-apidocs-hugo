@@ -2,7 +2,7 @@
 title: 'Metric Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 6
+weight: 5
 summary: "CRUD endpoints pertaining device metrics"
 ---
 The following endpoints provide CRUD operations on our metrics.

@@ -2,7 +2,7 @@
 title: 'Account Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
-weight: 17
+weight: 16
 summary: "The endpoints pertaining to account operations."
 ---
 

@@ -32,6 +32,7 @@ Field | Required | Example | Description
 `state` | Yes | 1 | The state of the note. Options 1, 2, 3, 4. (See notes below)
 `title` | Yes | Example Note | The title for this note.
 `user_id` | Yes | 2 | The user to attach this note to.
+`tenant_id` | Yes | 2 | The organization to attach this note to. How do you know what organizations the patient belongs to? Please see [TODO API]().
 
 ##### Success Response
 

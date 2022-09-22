@@ -27,7 +27,12 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-
+`category` | Yes | Medical | The custom text to categorize the note by.
+`content` | Yes | This is a note. | The content of the note.
+`state` | Yes | 1 | The state of the note. Options 1, 2, 3, 4. (See notes below)
+`title` | Yes | Example Note | The title for this note.
+`user_id` | Yes | 2 | The user to attach this note to.
+`tenant_id` | Yes | 2 | The organization to attach this note to. How do you know what organizations the patient belongs to? Please see [TODO API]().
 
 ##### Success Response
 
@@ -62,7 +67,10 @@ curl -X POST \
 
 ##### Notes
 
-None
+* state `1` = Patient and clinician can see the note.
+* state `2` = Patient cannot see but clinician can.
+* state `3` = Patient cannot see and archived by clinician.
+* state `4` = Patient can see but archived by clinician.
 
 # **List Notes**
 ##### Description

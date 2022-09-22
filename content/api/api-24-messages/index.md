@@ -3,15 +3,12 @@ title: 'Message Threads Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 24
-summary: "The retrieve endpoints for the message threads and their replies."
+summary: "The endpoints for the messages and their replies."
 ---
 
-
-<!-- ####################################################################### -->
-
-# **Create Message Thread**
+# **Create Message**
 ##### Description
-This endpoint will xyz.
+This endpoint enables organization staff and their patients to send messages between each other. Messages work like **WhatsApp** in which every message chain is between the patient and an organization; therefore, when you (as a patient) send a message, it is to an organization and not a specific user! When you (as an organization staff) sends a message, that message is specific for the user.
 
 ##### URL
 
@@ -29,7 +26,8 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`to_user_id` | Yes | 2 | The user to send this message to.
+`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see [TODO API]().
+`user_id` | Yes | 2 | Staff Perspective: The user to send this message to. Patient Perspective: My user id.
 `title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.
 
@@ -39,6 +37,21 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "0a2c4f1e-8568-4967-a43f-802e8eed4b70",
+        "tenant_id": 2,
+        "tenant_name": "Elite Physical Training",
+        "user_id": 2,
+        "user_name": "Brian Herbert",
+        "title": "Hey",
+        "content": "How are you doing?",
+        "state": 1,
+        "created_by_user_id": 1,
+        "created_by_user_name": "Frank Herbert",
+        "created_time": "2022-09-22T17:49:19.196524Z",
+        "modified_by_user_id": 1,
+        "modified_by_user_name": "Frank Herbert",
+        "modified_time": "2022-09-22T17:49:19.196524Z"
     }
     ```
 
@@ -56,19 +69,25 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"to_user_id":2, "title":"Hey","content":"How are you doing?", "onset_date":"1990-01-01T00:00:00Z","interaction_date":"1990-01-01T00:00:00Z"}' \
+    -d '{"tenant_id":2, "user_id":2, "title":"Hey","content":"How are you doing?"}' \
     http://127.0.0.1:8000/api/v1/messages
 ```
 
-##### Message Threads
+##### Notes
 
 None
 
 <!-- ####################################################################### -->
 
-# **List Message Threads**
+# **List Messages**
 ##### Description
-This endpoint will return a list of notes that have granted permission to the current logged in user.
+This endpoint will work depending on whether the logged in user is patient or staff member.
+
+**Patients**
+Endpoint will list all the medical organizations that the user is a patient of and the most recent message sent/received for that organization.
+
+**Staff**
+Endpoint will list all the users that are patients of this organization and show the most recent message sent/received by every user.
 
 ##### URL
 
@@ -82,16 +101,14 @@ This endpoint will return a list of notes that have granted permission to the cu
 
 Query Parameters | Description
 --------- | -----------
-`type_id` | Available choices: `sent` or `received`. `sent` will display all the messages that you sent to other users. `received` will display all the message that where sent to you.
 `offset` | The `ID` of the record in the list which will be used as to filter any records less then this value.
 `limit` | The maximum number of entries to return in the pagination.
 `sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
 `sort_field` | The column to sort by.
-`search` | The keywords to search through.
 
 ##### Required
 
-* `type_id`
+None
 
 ##### Data Params
 
@@ -104,23 +121,57 @@ None
     ```json
     {
         "next_offset": 1,
-        "count": 1,
+        "count": 2,
         "results": [
             {
-                "id": 1,
-                "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
-                "tenant_id": 1,
-                "from_user_id": 1,
-                "to_user_id": 2,
-                "title": "Hey",
-                "content": "How are you doing?",
+                "id": 2,
+                "uuid": "7139f7d0-6fbd-4371-ae68-6ad82856255a",
+                "tenant_id": 2,
+                "tenant_name": "Elite Training",
+                "user_id": 2,
+                "user_name": "Brian Herbert",
+                "role_id": 3,
                 "state": 1,
-                "created_by_user_id": 1,
-                "created_by_name_name": "Frank Herbert",
-                "created_time": "2022-09-19T16:27:29.617639Z",
+                "latest_message": {
+                    "id": 1,
+                    "uuid": "ad38e8ee-fac0-45b5-ba9d-15d303e6a96a",
+                    "tenant_id": 2,
+                    "tenant_name": "Elite Physical Training",
+                    "user_id": 2,
+                    "user_name": "Brian Herbert",
+                    "title": "Hey",
+                    "content": "How are you doing?",
+                    "state": 1,
+                    "created_by_user_id": 2,
+                    "created_by_user_name": "Brian Herbert",
+                    "created_time": "2022-09-22T20:13:29.817923Z",
+                    "modified_by_user_id": 1,
+                    "modified_by_user_name": "Frank Herbert",
+                    "modified_time": "2022-09-22T21:42:07.186885755Z"
+                },
+                "created_time": "2022-09-22T20:11:10.612241Z",
+                "created_by_user_id": 2,
+                "created_by_user_name": "Brian Herbert",
                 "modified_by_user_id": 1,
-                "modified_by_name_name": "Frank Herbert",
-                "modified_time": "2022-09-19T16:27:29.617639Z"
+                "modified_by_user_name": "Frank Herbert",
+                "modified_time": "2022-09-22T21:42:07.188418Z"
+            },
+            {
+                "id": 1,
+                "uuid": "a8fcd7cc-16fe-4c45-a744-fd37dc50be81",
+                "tenant_id": 2,
+                "tenant_name": "Elite Training",
+                "user_id": 1,
+                "user_name": "Frank Herbert",
+                "role_id": 1,
+                "state": 1,
+                "latest_message": null,
+                "created_time": "2022-09-22T20:08:37.284309Z",
+                "created_by_user_id": 1,
+                "created_by_user_name": "Frank Herbert",
+                "modified_by_user_id": 1,
+                "modified_by_user_name": "Frank Herbert",
+                "modified_time": "2022-09-22T20:08:37.284309Z"
             }
         ]
     }
@@ -137,25 +188,24 @@ Run the following in your terminal:
 **OR**
 
 ```shell
-curl "http://127.0.0.1:8000/api/v1/messages?type_id=sent" \
+curl "http://127.0.0.1:8000/api/v1/messages" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
     -H "Content-Type: application/json"
 ```
 
-##### Message Threads
+##### Notes
 
 None
 
 <!-- ####################################################################### -->
 
-# **Retrieve Message Thread**
-
+# **List Messages Details**
 ##### Description
-This endpoint will Update note for an existing user.
+Endpoint will list all the messages sent/received between this patient and the organization.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message/1`
+`https://bionotescloud.net/api/v1/message-details`
 
 ##### Method
 
@@ -163,13 +213,22 @@ This endpoint will Update note for an existing user.
 
 ##### URL Params
 
+Query Parameters | Description
+--------- | -----------
+`tenant_id` | The tenant that the user belongs to.
+`user_id` | Optional parameter to be added by staff when they want to list all the messages between staff and user that belongs to the tenant.
+`offset` | The `ID` of the record in the list which will be used as to filter any records less then this value.
+`limit` | The maximum number of entries to return in the pagination.
+`sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
+`sort_field` | The column to sort by.
+
+##### Required
+
 None
 
 ##### Data Params
 
-Field | Required | Example | Description
---------- | ----------- | ----------- | -----------
-
+None
 
 ##### Success Response
 
@@ -177,20 +236,27 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
-        "id": 1,
-        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
-        "tenant_id": 1,
-        "from_user_id": 1,
-        "to_user_id": 2,
-        "title": "Hey",
-        "content": "How are you doing?",
-        "state": 1,
-        "created_by_user_id": 1,
-        "created_by_name_name": "Frank Herbert",
-        "created_time": "0001-01-01T00:00:00Z",
-        "modified_by_user_id": 1,
-        "modified_by_name_name": "Frank Herbert",
-        "modified_time": "2022-09-19T16:27:29.617639Z"
+        "next_offset": 1,
+        "count": 1,
+        "results": [
+            {
+                "id": 1,
+                "uuid": "ad38e8ee-fac0-45b5-ba9d-15d303e6a96a",
+                "tenant_id": 2,
+                "tenant_name": "Elite Physical Training",
+                "user_id": 2,
+                "user_name": "Brian Herbert",
+                "title": "Hey",
+                "content": "How are you doing?",
+                "state": 1,
+                "created_by_user_id": 2,
+                "created_by_user_name": "Brian Herbert",
+                "created_time": "2022-09-22T20:13:29.817923Z",
+                "modified_by_user_id": 1,
+                "modified_by_user_name": "Frank Herbert",
+                "modified_time": "2022-09-22T21:51:36.002113Z"
+            }
+        ]
     }
     ```
 
@@ -199,38 +265,34 @@ Field | Required | Example | Description
 Run the following in your terminal:
 
 ```shell
-curl -X GET \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    https://bionotescloud.net/api/v1/message/1
+# ...
 ```
 
 **OR**
 
 ```shell
-curl -X GET \
-    -H "Content-Type: application/json" \
+curl "http://127.0.0.1:8000/api/v1/message-details?tenant_id=2&user_id=2" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    http://127.0.0.1:8000/api/v1/message/1
+    -H "Content-Type: application/json"
 ```
 
-##### Message Threads
+##### Notes
 
 None
 
 <!-- ####################################################################### -->
 
-# **Create Message Reply**
+# **Update Message Detail**
 ##### Description
-This endpoint will xyz.
+This endpoint enables organization staff and their patients update their previously sent messages.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message/1/replies`
+`https://bionotescloud.net/api/v1/message-detail/1`
 
 ##### Method
 
-`POST`
+`PUT`
 
 ##### URL Params
 
@@ -240,6 +302,9 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
+`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see [TODO API]().
+`user_id` | Yes | 2 | Staff Perspective: The user to send this message to. Patient Perspective: My user id.
+`title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.
 
 ##### Success Response
@@ -249,55 +314,20 @@ Field | Required | Example | Description
     ```json
     {
         "id": 1,
-        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
-        "tenant_id": 1,
-        "from_user_id": 1,
-        "to_user_id": 2,
+        "uuid": "0a2c4f1e-8568-4967-a43f-802e8eed4b70",
+        "tenant_id": 2,
+        "tenant_name": "Elite Physical Training",
+        "user_id": 2,
+        "user_name": "Brian Herbert",
         "title": "Hey",
         "content": "How are you doing?",
-        "state": 2,
+        "state": 1,
         "created_by_user_id": 1,
-        "created_by_name_name": "Frank Herbert",
-        "created_time": "0001-01-01T00:00:00Z",
-        "modified_by_user_id": 2,
-        "modified_by_name_name": "Brian Herbert",
-        "modified_time": "2022-09-19T16:54:41.389789Z",
-        "message_replies": [
-            {
-                "id": 2,
-                "uuid": "609516a8-6c76-435e-bedf-6612bbd647de",
-                "tenant_id": 1,
-                "message_thread_id": 1,
-                "from_user_id": 1,
-                "to_user_id": 2,
-                "title": "Hey",
-                "content": "I am doing good, thank you. How are you?",
-                "state": 1,
-                "created_by_user_id": 2,
-                "created_by_name_name": "Brian Herbert",
-                "created_time": "2022-09-19T18:57:54.126863Z",
-                "modified_by_user_id": 2,
-                "modified_by_name_name": "Brian Herbert",
-                "modified_time": "2022-09-19T18:57:54.126863Z"
-            },
-            {
-                "id": 1,
-                "uuid": "e4344470-0cde-4dd2-9250-f46c14f7b86c",
-                "tenant_id": 1,
-                "message_thread_id": 1,
-                "from_user_id": 1,
-                "to_user_id": 2,
-                "title": "Hey",
-                "content": "How are you doing?",
-                "state": 1,
-                "created_by_user_id": 2,
-                "created_by_name_name": "Brian Herbert",
-                "created_time": "2022-09-19T16:48:40.910413Z",
-                "modified_by_user_id": 1,
-                "modified_by_name_name": "Frank Herbert",
-                "modified_time": "2022-09-19T16:50:55.032108Z"
-            }
-        ]
+        "created_by_user_name": "Frank Herbert",
+        "created_time": "2022-09-22T17:49:19.196524Z",
+        "modified_by_user_id": 1,
+        "modified_by_user_name": "Frank Herbert",
+        "modified_time": "2022-09-22T17:49:19.196524Z"
     }
     ```
 
@@ -315,8 +345,8 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"content":"I am doing good, thank you. How are you?"}' \
-    http://127.0.0.1:8000/api/v1/message/1/replies
+    -d '{"tenant_id":2, "user_id":2, "title":"Hey","content":"How are you doing?"}' \
+    http://127.0.0.1:8000/api/v1/message-detail/1
 ```
 
 ##### Notes
@@ -324,124 +354,13 @@ curl -X POST \
 None
 
 <!-- ####################################################################### -->
-
-
-# **Update Message Reply**
+# **Delete Message Detail**
 ##### Description
-This endpoint will xyz.
+This endpoint will archive a single message. Calling this endpoint on an already archived message will unarchive it.
 
 ##### URL
 
-`https://bionotescloud.net/api/v1/message/1/replies`
-
-##### Method
-
-`PUT`
-
-##### URL Params
-
-None
-
-##### Data Params
-
-Field | Required | Example | Description
---------- | ----------- | ----------- | -----------
-`content` | Yes | How are you doing? | The content of the message.
-
-##### Success Response
-
-  * **Status**: `200`
-  * **Content**:
-    ```json
-    {
-        "id": 1,
-        "uuid": "e48ff395-cb81-4396-9743-fcaf36a1f4db",
-        "tenant_id": 1,
-        "from_user_id": 1,
-        "to_user_id": 2,
-        "title": "Hey",
-        "content": "How are you doing?",
-        "state": 2,
-        "created_by_user_id": 1,
-        "created_by_name_name": "Frank Herbert",
-        "created_time": "0001-01-01T00:00:00Z",
-        "modified_by_user_id": 2,
-        "modified_by_name_name": "Brian Herbert",
-        "modified_time": "2022-09-19T16:54:41.389789Z",
-        "message_replies": [
-            {
-                "id": 2,
-                "uuid": "609516a8-6c76-435e-bedf-6612bbd647de",
-                "tenant_id": 1,
-                "message_thread_id": 1,
-                "from_user_id": 1,
-                "to_user_id": 2,
-                "title": "Hey",
-                "content": "I am doing good, thank you. How are you?",
-                "state": 1,
-                "created_by_user_id": 2,
-                "created_by_name_name": "Brian Herbert",
-                "created_time": "2022-09-19T18:57:54.126863Z",
-                "modified_by_user_id": 2,
-                "modified_by_name_name": "Brian Herbert",
-                "modified_time": "2022-09-19T18:57:54.126863Z"
-            },
-            {
-                "id": 1,
-                "uuid": "e4344470-0cde-4dd2-9250-f46c14f7b86c",
-                "tenant_id": 1,
-                "message_thread_id": 1,
-                "from_user_id": 1,
-                "to_user_id": 2,
-                "title": "Hey",
-                "content": "How are you doing?",
-                "state": 1,
-                "created_by_user_id": 2,
-                "created_by_name_name": "Brian Herbert",
-                "created_time": "2022-09-19T16:48:40.910413Z",
-                "modified_by_user_id": 1,
-                "modified_by_name_name": "Frank Herbert",
-                "modified_time": "2022-09-19T16:50:55.032108Z"
-            }
-        ]
-    }
-    ```
-
-##### Sample Call
-
-Run the following in your terminal:
-
-```shell
-#...
-```
-
-**OR**
-
-```shell
-curl -X PUT \
-    -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"content":"I am doing good, thank you. How are you?"}' \
-    http://127.0.0.1:8000/api/v1/message/1/replies
-```
-
-##### Notes
-
-None
-
-<!-- ####################################################################### -->
-
-
-<!-- ####################################################################### -->
-
-
-# **Delete Message Thread**
-##### Description
-This endpoint will delete the whole message thread.
-
-##### URL
-
-`https://bionotescloud.net/api/v1/message/1`
+`https://bionotescloud.net/api/v1/message-detail/1`
 
 ##### Method
 
@@ -476,7 +395,7 @@ Run the following in your terminal:
 curl -X DELETE \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    http://127.0.0.1:8000/api/v1/message/1
+    http://127.0.0.1:8000/api/v1/message-detail/1
 ```
 
 ##### Notes

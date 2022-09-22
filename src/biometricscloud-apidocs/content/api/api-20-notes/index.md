@@ -51,7 +51,7 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"title":"Test Note #1","content":"This is a test.", "state":1, "user_id":1}' \
+    -d '{"title":"Test Note #1","content":"This is a test.", "state":1, "user_id":"2","tenant_id":"2"}' \
     https://bionotescloud.net/api/v1/notes
 ```
 
@@ -61,7 +61,7 @@ curl -X POST \
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"title":"Test Note #1","content":"This is a test.", "state":1, "user_id":1}' \
+    -d '{"title":"Test Note #1","content":"This is a test.", "state":1, "user_id":"2","tenant_id":"2"}' \
     http://127.0.0.1:8000/api/v1/notes
 ```
 
@@ -74,7 +74,13 @@ curl -X POST \
 
 # **List Notes**
 ##### Description
-This endpoint will return a list of notes that have granted permission to the current logged in user.
+This endpoint will return a list of notes based on the logged in user role of organization staff or client (aka patient).
+
+**Patient**
+If logged in use is patient then this endpoint will return all the notes that belong to the user across all the organizations.
+
+**Staff**
+If logged in as an organization staff member then this endpoint will return all the notes that belong to the specific organization. The staff member can filter down notes of a specific user by using the `user_id` URL parameter filter.
 
 ##### URL
 
@@ -93,6 +99,7 @@ Query Parameters | Description
 `sort_order` | Either the `asc` (ascending) or `desc` (descending) order to return the results as.
 `sort_field` | The column to sort by.
 `search` | The keywords to search through.
+`user_id` | Apply filter to only return notes belong to the user with this `user_id` value.
 
 ##### Required
 
@@ -107,7 +114,28 @@ None
   * **Status**: `200`
   * **Content**:
     ```json
-    {"next_offset":3,"count":3,"results":[{"id":1,"uuid":"142a436e-8547-42a8-8989-c6e40942801c","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:34:48.191946Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:34:48.191946Z"},{"id":2,"uuid":"3a6f5bf1-2bb8-4b7c-9f35-b5ff62886817","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:36:34.021615Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:36:34.021615Z"},{"id":3,"uuid":"6c27cf83-e2b1-4a9b-ad55-9488b6a30dc5","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:36:56.979505Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:36:56.979505Z"}]}
+    {
+        "next_offset": 1,
+        "count": 1,
+        "results": [
+            {
+                "id": 1,
+                "uuid": "dfc40a05-79e1-4c31-81ef-1e7cc3374afb",
+                "tenant_id": 2,
+                "user_id": 2,
+                "title": "HealthKit",
+                "content": "Data is missing!",
+                "category": "HealthKit",
+                "state": 1,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-22T23:25:39.354877Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-22T23:25:39.354878Z"
+            }
+        ]
+    }
     ```
 
 ##### Sample Call
@@ -136,7 +164,7 @@ None
 
 # **Retrieve Note**
 ##### Description
-This endpoint will Update note for an existing user.
+This endpoint will return the full note thread for an existing user.
 
 ##### URL
 

@@ -26,7 +26,7 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see [TODO API]().
+`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see **/api/v1/account** API endpoint.
 `user_id` | Yes | 2 | Staff Perspective: The user to send this message to. Patient Perspective: My user id.
 `title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.
@@ -302,7 +302,7 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see [TODO API]().
+`tenant_id` | Yes | 2 | The organization that the patient belongs to. How do you know what organizations the patient belongs to? Please see **/api/v1/account** API endpoint.
 `user_id` | Yes | 2 | Staff Perspective: The user to send this message to. Patient Perspective: My user id.
 `title` | Yes | Hey | The title to display in the message.
 `content` | Yes | How are you doing? | The content of the message.

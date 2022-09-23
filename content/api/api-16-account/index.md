@@ -91,7 +91,15 @@ None
                 "id": 3,
                 "text": "Acute cholecystitis"
             }
-        ]
+        ],
+        "organizations": [
+        {
+           "id": 2,
+           "uuid": "b05a59a2-440c-4211-aa1c-2ec2f2c861d5",
+           "name": "Elite Physical Training",
+           "state": 1
+        }
+    ]
     }
     ```
 

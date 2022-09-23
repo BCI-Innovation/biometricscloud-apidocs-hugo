@@ -9,7 +9,7 @@ summary: "The retrieve endpoints for the notes data."
 
 # **Create Note**
 ##### Description
-This endpoint will create note for an existing user.
+This endpoint will create **note** and **note item** for an existing user. Once a note is created, you can attach **more** `note items` to it.
 
 ##### URL
 
@@ -28,11 +28,11 @@ None
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
 `category` | Yes | Medical | The custom text to categorize the note by.
-`content` | Yes | This is a note. | The content of the first note
-`state` | Yes | 1 | The state of the note. Options 1, 2, 3, 4. (See notes below)
+`content` | Yes | This is a note. | The content of the first `note_item`.
+`state` | Yes | 1 | The state of the note. Options `1`, `2`, `3`, `4`. (See below)
 `title` | Yes | Example Note | The title for this note.
 `user_id` | Yes | 2 | The user to attach this note to.
-`tenant_id` | Yes | 2 | The organization to attach this note to. How do you know what organizations the patient belongs to? Please see [TODO API]().
+`tenant_id` | Yes | 2 | The organization to attach this note to. How do you know what organizations the patient belongs to? Please see **/api/v1/account** API endpoint.
 
 ##### Success Response
 
@@ -210,9 +210,7 @@ None
 
 ##### Data Params
 
-Field | Required | Example | Description
---------- | ----------- | ----------- | -----------
-
+None
 
 ##### Success Response
 
@@ -290,7 +288,7 @@ This endpoint will Update note for an existing user.
 
 ##### Method
 
-`POST`
+`PUT`
 
 ##### URL Params
 
@@ -300,7 +298,12 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-
+`category` | Yes | Medical | The custom text to categorize the note by.
+`content` | Yes | This is a note. | The content of the first `note_item`.
+`state` | Yes | 1 | The state of the note. Options `1`, `2`, `3`, `4`. (See below)
+`title` | Yes | Example Note | The title for this note.
+`user_id` | Yes | 2 | The user to attach this note to.
+`tenant_id` | Yes | 2 | The organization to attach this note to. How do you know what organizations the patient belongs to? Please see **/api/v1/account** API endpoint.
 
 ##### Success Response
 
@@ -335,15 +338,10 @@ curl -X PUT \
 
 ##### Notes
 
-None
-
-
-
-
-
-
-
-
+* state `1` = Patient and clinician can see the note.
+* state `2` = Patient cannot see but clinician can.
+* state `3` = Patient cannot see and archived by clinician.
+* state `4` = Patient can see but archived by clinician.
 
 # **Delete Note**
 ##### Description

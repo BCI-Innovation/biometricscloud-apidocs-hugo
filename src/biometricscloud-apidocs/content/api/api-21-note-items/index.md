@@ -27,6 +27,10 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
+`note_id` | Yes | 1 | The ID of the note that this note item belongs to.
+`content` | Yes | This is a note. | The content of the first `note_item`.
+`state` | Yes | 1 | The state of the note. Options `1`, `2`, `3`, `4`. (See below)
+`move_index` | Yes | 1 | The order position that this note belongs to.
 
 
 ##### Success Response
@@ -35,6 +39,20 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "1d1fd475-bff2-42bc-bcab-45ac0798295b",
+        "tenant_id": 2,
+        "note_id": 1,
+        "user_id": 2,
+        "content": "This is a test comment.",
+        "move_index": 1,
+        "state": 4,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "2022-09-23T01:58:24.898176Z",
+        "modified_by_user_id": 1,
+        "modified_by_name_name": "Frank Herbert",
+        "modified_time": "2022-09-23T04:39:32.211117Z"
     }
     ```
 
@@ -62,7 +80,11 @@ curl -X POST \
 
 ##### Notes
 
-None
+* state `1` = Patient and clinician can see the note.
+* state `2` = Patient cannot see but clinician can.
+* state `3` = Patient cannot see and archived by clinician.
+* state `4` = Patient can see but archived by clinician.
+
 
 # **List Notes**
 ##### Description
@@ -99,7 +121,44 @@ None
   * **Status**: `200`
   * **Content**:
     ```json
-    {"next_offset":3,"count":3,"results":[{"id":1,"uuid":"142a436e-8547-42a8-8989-c6e40942801c","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:34:48.191946Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:34:48.191946Z"},{"id":2,"uuid":"3a6f5bf1-2bb8-4b7c-9f35-b5ff62886817","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:36:34.021615Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:36:34.021615Z"},{"id":3,"uuid":"6c27cf83-e2b1-4a9b-ad55-9488b6a30dc5","tenant_id":1,"user_id":1,"title":"Test Note #1","content":"This is a test.","state":1,"created_by_user_id":1,"created_by_name_name":"Frank Herbert","created_time":"2022-06-21T23:36:56.979505Z","modified_by_user_id":1,"modified_by_name_name":"Frank Herbert","modified_time":"2022-06-21T23:36:56.979505Z"}]}
+    {
+        "next_offset": 2,
+        "count": 2,
+        "results": [
+            {
+                "id": 1,
+                "uuid": "1d1fd475-bff2-42bc-bcab-45ac0798295b",
+                "tenant_id": 2,
+                "note_id": 1,
+                "user_id": 2,
+                "content": "This is a test comment.",
+                "move_index": 1,
+                "state": 4,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-23T01:58:24.898176Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-23T04:39:32.211117Z"
+            },
+            {
+                "id": 2,
+                "uuid": "f63f9fc8-3a05-4021-8a3b-6ae6af5a1a6b",
+                "tenant_id": 2,
+                "note_id": 1,
+                "user_id": 2,
+                "content": "I am doing fine, thank you!",
+                "move_index": 1,
+                "state": 1,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-23T04:00:37.255142Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-23T04:00:37.255142Z"
+            }
+        ]
+    }
     ```
 
 ##### Sample Call
@@ -145,7 +204,10 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-
+`note_id` | Yes | 1 | The ID of the note that this note item belongs to.
+`content` | Yes | This is a note. | The content of the first `note_item`.
+`state` | Yes | 1 | The state of the note. Options `1`, `2`, `3`, `4`. (See below)
+`move_index` | Yes | 1 | The order position that this note belongs to.
 
 ##### Success Response
 
@@ -153,6 +215,20 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "1d1fd475-bff2-42bc-bcab-45ac0798295b",
+        "tenant_id": 2,
+        "note_id": 1,
+        "user_id": 2,
+        "content": "This is a test comment.",
+        "move_index": 1,
+        "state": 4,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "2022-09-23T01:58:24.898176Z",
+        "modified_by_user_id": 1,
+        "modified_by_name_name": "Frank Herbert",
+        "modified_time": "2022-09-23T04:39:32.211117Z"
     }
     ```
 
@@ -180,14 +256,10 @@ curl -X PUT \
 
 ##### Notes
 
-None
-
-
-
-
-
-
-
+* state `1` = Patient and clinician can see the note.
+* state `2` = Patient cannot see but clinician can.
+* state `3` = Patient cannot see and archived by clinician.
+* state `4` = Patient can see but archived by clinician.
 
 
 # **Delete Note**

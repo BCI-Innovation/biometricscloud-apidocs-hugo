@@ -160,11 +160,9 @@ curl "http://127.0.0.1:8000/api/v1/notes" \
 
 None
 
-
-
 # **Retrieve Note**
 ##### Description
-This endpoint will return the full note thread for an existing user.
+This endpoint will return the full note thread for an existing user. This API endpoint is available to both organization staff member and the client as long as they both belong to the correct organization.
 
 ##### URL
 
@@ -190,6 +188,39 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "dfc40a05-79e1-4c31-81ef-1e7cc3374afb",
+        "tenant_id": 2,
+        "user_id": 2,
+        "title": "HealthKit",
+        "content": "Data is missing!",
+        "category": "HealthKit",
+        "state": 1,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "2022-09-22T23:25:39.354877Z",
+        "modified_by_user_id": 1,
+        "modified_by_name_name": "Frank Herbert",
+        "modified_time": "2022-09-22T23:25:39.354878Z",
+        "note_items": [
+            {
+                "id": 1,
+                "uuid": "28b2341c-e3e5-4804-bc77-db82c427ed87",
+                "tenant_id": 2,
+                "note_id": 1,
+                "user_id": 2,
+                "title": "HealthKit",
+                "content": "Data is missing!",
+                "move_index": 1,
+                "state": 1,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-22T23:25:39.41477Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-22T23:25:39.414771Z"
+            }
+        ]
     }
     ```
 

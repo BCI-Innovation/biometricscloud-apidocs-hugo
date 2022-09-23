@@ -28,7 +28,7 @@ None
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
 `category` | Yes | Medical | The custom text to categorize the note by.
-`content` | Yes | This is a note. | The content of the note.
+`content` | Yes | This is a note. | The content of the first note
 `state` | Yes | 1 | The state of the note. Options 1, 2, 3, 4. (See notes below)
 `title` | Yes | Example Note | The title for this note.
 `user_id` | Yes | 2 | The user to attach this note to.
@@ -40,6 +40,38 @@ Field | Required | Example | Description
   * **Content**:
     ```json
     {
+        "id": 1,
+        "uuid": "dfc40a05-79e1-4c31-81ef-1e7cc3374afb",
+        "tenant_id": 2,
+        "user_id": 2,
+        "title": "HealthKit",
+        "category": "HealthKit",
+        "state": 1,
+        "created_by_user_id": 1,
+        "created_by_name_name": "Frank Herbert",
+        "created_time": "2022-09-22T23:25:39.354877Z",
+        "modified_by_user_id": 1,
+        "modified_by_name_name": "Frank Herbert",
+        "modified_time": "2022-09-22T23:25:39.354878Z",
+        "note_items": [
+            {
+                "id": 1,
+                "uuid": "28b2341c-e3e5-4804-bc77-db82c427ed87",
+                "tenant_id": 2,
+                "note_id": 1,
+                "user_id": 2,
+                "title": "HealthKit",
+                "content": "Data is missing!",
+                "move_index": 1,
+                "state": 1,
+                "created_by_user_id": 1,
+                "created_by_name_name": "Frank Herbert",
+                "created_time": "2022-09-22T23:25:39.41477Z",
+                "modified_by_user_id": 1,
+                "modified_by_name_name": "Frank Herbert",
+                "modified_time": "2022-09-22T23:25:39.414771Z"
+            }
+        ]
     }
     ```
 

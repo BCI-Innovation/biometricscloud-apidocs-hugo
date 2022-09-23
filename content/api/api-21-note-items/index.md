@@ -3,7 +3,7 @@ title: 'Note Items Endpoints'
 date: 2019-02-11T19:27:37+10:00
 draft: false
 weight: 21
-summary: "The retrieve endpoints for the notes data."
+summary: "The endpoints for the notes items."
 ---
 
 
@@ -27,7 +27,10 @@ None
 
 Field | Required | Example | Description
 --------- | ----------- | ----------- | -----------
-
+`note_id` | Yes | 1 | The note that this item belongs to.
+`content` | Yes | This is a note. | The content of the first note
+`state` | Yes | 1 | The state of the note. Options 1, 2, 3, 4. (See notes below)
+`move_index` | Yes | 1 | The index to set the note in.
 
 ##### Success Response
 
@@ -46,7 +49,7 @@ Run the following in your terminal:
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"note_id":1, "move_index":1, "title":"Note Item Hello World", "content":"This is a note item.", "state":1}' \
+    -d '{"note_id":1,"content":"This is a note item.","state":"1","move_index":"1"}' \
     https://bionotescloud.net/api/v1/note-items
 ```
 
@@ -56,7 +59,7 @@ curl -X POST \
 curl -X POST \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"note_id":1, "move_index":1, "title":"Note Item Hello World", "content":"This is a note item.", "state":1}' \
+    -d '{"note_id":1,"content":"This is a note item.","state":"1","move_index":"1"}' \
     http://127.0.0.1:8000/api/v1/note-items
 ```
 
@@ -164,7 +167,7 @@ Run the following in your terminal:
 curl -X PUT \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"note_id":1, "move_index":1, "title":"Note Item #1", "content":"This is a note item.", "state":1}' \
+    -d '{"note_id":1,"content":"This is a note item.","state":"1","move_index":"1"}' \
     https://bionotescloud.net/api/v1/note-item/1
 ```
 
@@ -174,7 +177,7 @@ curl -X PUT \
 curl -X PUT \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
-    -d '{"note_id":1, "move_index":1, "title":"Note Item #1", "content":"This is a note item.", "state":1}' \
+    -d '{"note_id":1,"content":"This is a note item.","state":"1","move_index":"1"}' \
     http://127.0.0.1:8000/api/v1/note-item/1
 ```
 

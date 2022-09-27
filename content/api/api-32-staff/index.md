@@ -76,11 +76,11 @@ curl -X POST \
 
 ##### Notes
 
-**IMPORTANT:** Please save the `client_id`, `client_secret` and `redirect_url` values as you will not be getting them again. If you lose these values then you will need to create a new Tag and delete the existing one.
+None
 
-# **List Tags**
+# **List Staff**
 ##### Description
-This endpoint will return a list of Tags.
+This endpoint will return a list of staff.
 
 ##### URL
 
@@ -149,7 +149,7 @@ This endpoint will retrieve the Tag detail.
 
 Query Parameters | Required | Default Value | Description
 --------- | ----------- | ----------- | -----------
-`tag_id` | Yes  | - | The Tag identification that belongs to the user.
+`staff_id` | Yes  | - | The staff identification that belongs to the user.
 
 ##### Data Params
 
@@ -186,6 +186,74 @@ curl "http://localhost:8000/api/v1/staff/1" \
 
 None
 
+
+# **Update Staff**
+##### Description
+Update the staff detail.
+
+##### URL
+
+`https://biometricscloud.net/api/v1/staff/1`
+
+##### Method
+
+`PUT`
+
+##### URL Params
+
+None
+
+##### Data Params
+
+
+Field | Required | Description
+--------- | ----------- | -----------
+`username` | Yes | The  unique name to identify your account.
+`first_name` | Yes | The first name of the user.
+`middle_name` | No | The middle name of the user.
+`last_name` | Yes | The last name of the user.  
+`country` | Yes | The country of origin for the user.
+`country_tel_code` Yes | | The country code for the telephone.
+`telephone` | Yes | The telephone number for the user.
+`email` | Yes | The email address for the user.  
+`agree_tos` | Yes | True or false value depending if the user agreed to the terms of service.
+`account_type` | Yes | The type of user account to setup. Options: `1`=**Personal** and `2`=**Professional**.
+`account_sub_type` | Yes | If you selected `account_type=2` then you need to fill this out. Select from `1`=**Other**, `2`=**Practitioner** and `3`=**Clinician**.
+`account_sub_type_other` | Yes | If you selected `account_type=2` and `account_sub_type=1` then you need to fill this out. Please write your profession, ex: "Gym
+
+##### Success Response
+
+  * **Status**: `200`
+  * **Content**:
+    ```json
+
+    ```
+
+##### Sample Call
+
+Run the following in your terminal:
+
+```shell
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"text":"Healthy"}' \
+    https://biometricscloud.net/api/v1/staff/1
+```
+
+**OR**
+
+```shell
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $BIOMETRICSCLOUD_ACCESS_TOKEN" \
+    -d '{"text":"Healthy"}' \
+    http://127.0.0.1:8000/api/v1/staff/1
+```
+
+##### Notes
+
+None
 
 # **Delete Tag**
 ##### Description

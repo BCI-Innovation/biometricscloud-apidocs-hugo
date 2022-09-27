@@ -257,7 +257,7 @@ None
 
 # **Delete Tag**
 ##### Description
-This endpoint will disconnect/disable the Tag. To reconnect the Tag, please see the [Tag authorize](#Tag-authorization) endpoint.
+This endpoint will delete the staff.
 
 ##### URL
 
@@ -271,7 +271,7 @@ This endpoint will disconnect/disable the Tag. To reconnect the Tag, please see 
 
 Query Parameters | Required | Default Value | Description
 --------- | ----------- | ----------- | -----------
-`Tag_id` | Yes  | - | The Tag identification that belongs to the user.
+`staff_id` | Yes  | - | The staff identification that belongs to the user.
 
 ##### Data Params
 
